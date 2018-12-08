@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Wxm-U3-ygj">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Taux de change-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ExchangeRatesViewController" customModule="Le_Baluchon" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="european-union-flag-std" translatesAutoresizingMaskIntoConstraints="NO" id="uRA-fc-WQT">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                                <gestureRecognizers/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Taux de change" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6zA-Mb-kde">
+                                <rect key="frame" x="16" y="20" width="343" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="6zA-Mb-kde" secondAttribute="height" multiplier="343:36" id="WFm-Qs-tov"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Copperplate-Bold" family="Copperplate" pointSize="25"/>
+                                <color key="textColor" red="0.0048598507420000003" green="0.096086271109999996" blue="0.57499289509999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Euro" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a6U-dQ-dCz">
+                                <rect key="frame" x="16" y="150" width="343" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="a6U-dQ-dCz" secondAttribute="height" multiplier="343:20" id="clJ-VH-nlw"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Copperplate-Bold" family="Copperplate" pointSize="20"/>
+                                <color key="textColor" red="0.0" green="0.56031829119999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hd4-Gy-nL9">
+                                <rect key="frame" x="16" y="178" width="343" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Hd4-Gy-nL9" secondAttribute="height" multiplier="343:30" id="3fv-YC-nGa"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad" returnKeyType="continue"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dollar" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uzp-hv-VvP">
+                                <rect key="frame" x="16" y="278" width="343" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Uzp-hv-VvP" secondAttribute="height" multiplier="343:20" id="rTW-Vl-kM6"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Copperplate-Bold" family="Copperplate" pointSize="20"/>
+                                <color key="textColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fEt-IP-5lB">
+                                <rect key="frame" x="16" y="306" width="343" height="30"/>
+                                <color key="backgroundColor" red="0.9951923077" green="0.9903846154" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="fEt-IP-5lB" secondAttribute="height" multiplier="343:30" id="Ymg-hU-Tlw"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="q32-CH-r0j">
+                                <rect key="frame" x="177.5" y="523" width="20" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="q32-CH-r0j" secondAttribute="height" multiplier="1:1" id="cVL-uI-WTS"/>
+                                </constraints>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.47684186699999997" green="0.50480759139999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="fEt-IP-5lB" firstAttribute="leading" secondItem="Uzp-hv-VvP" secondAttribute="leading" id="4XD-9N-t6e"/>
+                            <constraint firstItem="q32-CH-r0j" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="55T-nb-98W"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="fEt-IP-5lB" secondAttribute="trailing" constant="16" id="5Im-le-ZY5"/>
+                            <constraint firstItem="fEt-IP-5lB" firstAttribute="trailing" secondItem="Uzp-hv-VvP" secondAttribute="trailing" id="7Mw-rD-ZQ7"/>
+                            <constraint firstItem="uRA-fc-WQT" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="E7a-19-PHZ"/>
+                            <constraint firstItem="Hd4-Gy-nL9" firstAttribute="leading" secondItem="a6U-dQ-dCz" secondAttribute="leading" id="FNz-4I-obj"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="q32-CH-r0j" secondAttribute="bottom" constant="75" id="LTV-kM-suk"/>
+                            <constraint firstItem="Hd4-Gy-nL9" firstAttribute="top" secondItem="a6U-dQ-dCz" secondAttribute="bottom" constant="8" id="Utf-3F-cHX"/>
+                            <constraint firstItem="Hd4-Gy-nL9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Vdq-so-ryY"/>
+                            <constraint firstItem="Hd4-Gy-nL9" firstAttribute="trailing" secondItem="a6U-dQ-dCz" secondAttribute="trailing" id="Vjp-JY-XNC"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Hd4-Gy-nL9" secondAttribute="trailing" constant="16" id="b85-jm-y6F"/>
+                            <constraint firstItem="Uzp-hv-VvP" firstAttribute="top" secondItem="Hd4-Gy-nL9" secondAttribute="bottom" constant="70" id="dGF-te-p2c"/>
+                            <constraint firstItem="uRA-fc-WQT" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="fYx-mH-Udz"/>
+                            <constraint firstItem="6zA-Mb-kde" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="in0-xg-2aH"/>
+                            <constraint firstItem="fEt-IP-5lB" firstAttribute="top" secondItem="Uzp-hv-VvP" secondAttribute="bottom" constant="8" id="lcf-NY-jxl"/>
+                            <constraint firstItem="6zA-Mb-kde" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="p0h-ub-751"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="6zA-Mb-kde" secondAttribute="trailing" constant="16" id="qFW-Rc-pWC"/>
+                            <constraint firstItem="fEt-IP-5lB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="tBd-8z-81k"/>
+                            <constraint firstItem="a6U-dQ-dCz" firstAttribute="top" secondItem="6zA-Mb-kde" secondAttribute="bottom" constant="94" id="tsv-TO-hxT"/>
+                            <constraint firstItem="uRA-fc-WQT" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="vmJ-if-2CL"/>
+                            <constraint firstItem="uRA-fc-WQT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="zC3-W8-h1P"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="w5M-Oz-XQH" appends="YES" id="y8F-dQ-9zc"/>
+                        </connections>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Taux de change" id="fvR-A7-L54"/>
+                    <navigationItem key="navigationItem" id="dQC-Y9-Kqq"/>
+                    <connections>
+                        <outlet property="activityIndicator" destination="q32-CH-r0j" id="uBp-q0-DiQ"/>
+                        <outlet property="dollarExchangeLabel" destination="fEt-IP-5lB" id="0c6-r6-Xke"/>
+                        <outlet property="euroExchangeRatesTextField" destination="Hd4-Gy-nL9" id="bmy-Fv-CMP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="w5M-Oz-XQH">
+                    <connections>
+                        <action selector="dismissKeyboard:" destination="BYZ-38-t0r" id="bIZ-XS-edf"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="509.60000000000002" y="-448.42578710644682"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="hRx-ol-p3a">
+            <objects>
+                <tabBarController id="Wxm-U3-ygj" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="YG0-Sg-Ed5">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="p6R-ga-HTS"/>
+                        <segue destination="exf-vA-L5E" kind="relationship" relationship="viewControllers" id="6e4-T3-M1q"/>
+                        <segue destination="BRL-4z-neV" kind="relationship" relationship="viewControllers" id="03P-gD-bwb"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6NT-BD-7Vc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1127" y="352"/>
+        </scene>
+        <!--Traducteur-->
+        <scene sceneID="V9g-2f-jSt">
+            <objects>
+                <viewController id="exf-vA-L5E" customClass="TranslateViewController" customModule="Le_Baluchon" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="OfY-Px-MFM">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="france-flag-std" translatesAutoresizingMaskIntoConstraints="NO" id="KCh-di-AQc">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Traducteur" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6rP-0s-wej">
+                                <rect key="frame" x="16" y="20" width="343" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="6rP-0s-wej" secondAttribute="height" multiplier="343:36" id="3JU-t8-B5e"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Copperplate-Bold" family="Copperplate" pointSize="25"/>
+                                <color key="textColor" red="0.0048598507420000003" green="0.096086271109999996" blue="0.57499289509999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.47684186699999997" green="0.50480759139999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6rP-0s-wej" firstAttribute="leading" secondItem="uP0-VD-Erf" secondAttribute="leading" constant="16" id="38a-xJ-pb1"/>
+                            <constraint firstItem="KCh-di-AQc" firstAttribute="trailing" secondItem="uP0-VD-Erf" secondAttribute="trailing" id="Om8-VP-6i7"/>
+                            <constraint firstItem="KCh-di-AQc" firstAttribute="leading" secondItem="uP0-VD-Erf" secondAttribute="leading" id="OwB-fU-OeG"/>
+                            <constraint firstItem="KCh-di-AQc" firstAttribute="top" secondItem="OfY-Px-MFM" secondAttribute="top" id="VUA-UW-S7G"/>
+                            <constraint firstItem="6rP-0s-wej" firstAttribute="top" secondItem="uP0-VD-Erf" secondAttribute="top" id="XoH-T7-pld"/>
+                            <constraint firstItem="KCh-di-AQc" firstAttribute="bottom" secondItem="uP0-VD-Erf" secondAttribute="bottom" id="m9L-5e-r7f"/>
+                            <constraint firstItem="uP0-VD-Erf" firstAttribute="trailing" secondItem="6rP-0s-wej" secondAttribute="trailing" constant="16" id="qkC-TK-XG8"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="uP0-VD-Erf"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Traducteur" id="f95-Kq-01S"/>
+                    <navigationItem key="navigationItem" id="xg0-6r-fib"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eqk-KJ-Nh4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="509.60000000000002" y="352.17391304347831"/>
+        </scene>
+        <!--Météo-->
+        <scene sceneID="lfK-aI-mZf">
+            <objects>
+                <viewController id="BRL-4z-neV" customClass="WeatherViewController" customModule="Le_Baluchon" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="41X-iV-hWB">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="usa-flag-std_1" translatesAutoresizingMaskIntoConstraints="NO" id="6bi-Yr-jrM">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Météo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lbi-pS-CvX">
+                                <rect key="frame" x="16" y="20" width="343" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Lbi-pS-CvX" secondAttribute="height" multiplier="343:36" id="aZ9-UN-i8e"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Copperplate-Bold" family="Copperplate" pointSize="25"/>
+                                <color key="textColor" red="0.0048598507420000003" green="0.096086271109999996" blue="0.57499289509999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.47684186699999997" green="0.50480759139999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6bi-Yr-jrM" firstAttribute="leading" secondItem="vWo-zG-ZiV" secondAttribute="leading" id="Ixh-ym-JyX"/>
+                            <constraint firstItem="Lbi-pS-CvX" firstAttribute="top" secondItem="vWo-zG-ZiV" secondAttribute="top" id="Q8y-5a-IX1"/>
+                            <constraint firstItem="6bi-Yr-jrM" firstAttribute="trailing" secondItem="vWo-zG-ZiV" secondAttribute="trailing" id="RIT-wB-Jwj"/>
+                            <constraint firstItem="vWo-zG-ZiV" firstAttribute="trailing" secondItem="Lbi-pS-CvX" secondAttribute="trailing" constant="16" id="jEz-xQ-iI7"/>
+                            <constraint firstItem="6bi-Yr-jrM" firstAttribute="bottom" secondItem="vWo-zG-ZiV" secondAttribute="bottom" id="nWg-H1-yvF"/>
+                            <constraint firstItem="6bi-Yr-jrM" firstAttribute="top" secondItem="41X-iV-hWB" secondAttribute="top" id="rGO-JX-GT5"/>
+                            <constraint firstItem="Lbi-pS-CvX" firstAttribute="leading" secondItem="vWo-zG-ZiV" secondAttribute="leading" constant="16" id="xEo-dX-xjh"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="vWo-zG-ZiV"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Météo" id="icw-ak-YSs"/>
+                    <navigationItem key="navigationItem" id="mU4-XX-8sM"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ENq-So-iac" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="509.60000000000002" y="1145.577211394303"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="european-union-flag-std" width="800" height="800"/>
+        <image name="france-flag-std" width="800" height="800"/>
+        <image name="usa-flag-std_1" width="800" height="800"/>
+    </resources>
+</document>
