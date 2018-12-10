@@ -19,10 +19,12 @@ class ExchangeRatesViewController: UIViewController {
         super.viewDidLoad()
         toggleActivityIndicator(shown: false)
     }
-    
+
     private func toggleActivityIndicator(shown: Bool) {
         activityIndicator.isHidden = !shown
     }
+    
+// MARK : - Update rates with euro base
     
     private func update(rates: Rates) {
         if (euroTextField.text?.count)! > 0 {
@@ -38,17 +40,23 @@ class ExchangeRatesViewController: UIViewController {
         }
     }
     
+// MARK: - Clear method euro text field ans dollar label
+    
     private func clearEuroTextFieldAndDollarExchangeLabel() {
         euroTextField.text = ""
         dollarExchangeLabel.text = ""
         countryImageView.image = #imageLiteral(resourceName: "european-union-flag-std")
     }
     
+// MARK: - Alert view controller an error
+    
     private func presentAlert() {
         let alertVC = UIAlertController(title: "Error", message: "Exchange failed", preferredStyle: .alert)
         alertVC.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
         present(alertVC, animated: true, completion: nil)
     }
+    
+// MARK: - Action dissmiss keyboard and tap euro text field
     
     @IBAction func dismissKeyboard(_ sender: UITapGestureRecognizer) {
         euroTextField.resignFirstResponder()
@@ -67,6 +75,3 @@ class ExchangeRatesViewController: UIViewController {
         }
     }
 }
-
-
-

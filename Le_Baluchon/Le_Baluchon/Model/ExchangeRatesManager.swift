@@ -22,6 +22,12 @@ class ExchangeRatesManager {
         self.exchangeRatesSession = exchangeRatesSession
     }
     
+    private func createExchangeratesRequest() -> URLRequest {
+        var request = URLRequest(url: ExchangeRatesManager.exchangeRatesUrl)
+        request.httpMethod = "GET"
+        return request
+    }
+    
     func getExchangeRates(callback: @escaping (Bool, Rates?) -> Void) {
         let request = createExchangeratesRequest()
         
@@ -47,14 +53,4 @@ class ExchangeRatesManager {
         }
         task?.resume()
     }
-    
-    private func createExchangeratesRequest() -> URLRequest {
-        var request = URLRequest(url: ExchangeRatesManager.exchangeRatesUrl)
-        request.httpMethod = "GET"
-        return request
-    }
 }
-
-
-
-

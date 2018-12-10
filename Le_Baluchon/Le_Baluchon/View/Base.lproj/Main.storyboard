@@ -46,8 +46,13 @@
                                     <constraint firstAttribute="width" secondItem="Hd4-Gy-nL9" secondAttribute="height" multiplier="343:30" id="3fv-YC-nGa"/>
                                 </constraints>
                                 <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="continue"/>
+                                <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad" returnKeyType="continue"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="maxLength">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="tapEuroTextField:forEvent:" destination="BYZ-38-t0r" eventType="editingChanged" id="Afl-Ao-j7C"/>
                                 </connections>
@@ -67,12 +72,12 @@
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="fEt-IP-5lB" secondAttribute="height" multiplier="343:30" id="Ymg-hU-Tlw"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="q32-CH-r0j">
-                                <rect key="frame" x="177.5" y="418" width="20" height="20"/>
+                                <rect key="frame" x="177.5" y="386" width="20" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="q32-CH-r0j" secondAttribute="height" multiplier="1:1" id="cVL-uI-WTS"/>
                                 </constraints>
@@ -87,7 +92,7 @@
                             <constraint firstItem="fEt-IP-5lB" firstAttribute="trailing" secondItem="Uzp-hv-VvP" secondAttribute="trailing" id="7Mw-rD-ZQ7"/>
                             <constraint firstItem="uRA-fc-WQT" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="E7a-19-PHZ"/>
                             <constraint firstItem="Hd4-Gy-nL9" firstAttribute="leading" secondItem="a6U-dQ-dCz" secondAttribute="leading" id="FNz-4I-obj"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="q32-CH-r0j" secondAttribute="bottom" constant="180" id="LTV-kM-suk"/>
+                            <constraint firstItem="q32-CH-r0j" firstAttribute="top" secondItem="fEt-IP-5lB" secondAttribute="bottom" constant="50" id="Mit-HM-Who"/>
                             <constraint firstItem="Hd4-Gy-nL9" firstAttribute="top" secondItem="a6U-dQ-dCz" secondAttribute="bottom" constant="8" id="Utf-3F-cHX"/>
                             <constraint firstItem="Hd4-Gy-nL9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Vdq-so-ryY"/>
                             <constraint firstItem="Hd4-Gy-nL9" firstAttribute="trailing" secondItem="a6U-dQ-dCz" secondAttribute="trailing" id="Vjp-JY-XNC"/>
