@@ -9,11 +9,5 @@
 import Foundation
 
 struct FixerApiResponse: Decodable {
-    
-    let success: Bool
-    let timestamp: Int
-    let base: String
-    let date: String
     let rates: [String: Double]
-    
 }

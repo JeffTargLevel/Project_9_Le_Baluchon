@@ -10,22 +10,53 @@ import UIKit
 
 class ExchangeRatesViewController: UIViewController {
     
-    @IBOutlet weak var euroExchangeRatesTextField: UITextField!
+    @IBOutlet weak var euroTextField: UITextField!
     @IBOutlet weak var dollarExchangeLabel: UILabel!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var countryImageView: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         toggleActivityIndicator(shown: false)
-        
+    }
+    
+    private func toggleActivityIndicator(shown: Bool) {
+        activityIndicator.isHidden = !shown
+    }
+    
+    private func update(rates: Rates) {
+        if (euroTextField.text?.count)! > 0 {
+            countryImageView.image = #imageLiteral(resourceName: "usa-flag-std_1")
+            let euro = Double(euroTextField.text!)
+            let usd = rates.usd
+            let resultExchange = euro! * usd
+            dollarExchangeLabel.text = String(resultExchange)
+        } else if euroTextField.text?.count == 0 {
+            clearEuroTextFieldAndDollarExchangeLabel()
+        } else {
+            presentAlert()
+        }
+    }
+    
+    private func clearEuroTextFieldAndDollarExchangeLabel() {
+        euroTextField.text = ""
+        dollarExchangeLabel.text = ""
+        countryImageView.image = #imageLiteral(resourceName: "european-union-flag-std")
+    }
+    
+    private func presentAlert() {
+        let alertVC = UIAlertController(title: "Error", message: "Exchange failed", preferredStyle: .alert)
+        alertVC.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+        present(alertVC, animated: true, completion: nil)
     }
     
     @IBAction func dismissKeyboard(_ sender: UITapGestureRecognizer) {
-        euroExchangeRatesTextField.resignFirstResponder()
+        euroTextField.resignFirstResponder()
+        clearEuroTextFieldAndDollarExchangeLabel()
+    }
+    
+    @IBAction func tapEuroTextField(_ sender: Any, forEvent event: UIEvent) {
         toggleActivityIndicator(shown: true)
-        
-        
-        
         ExchangeRatesManager.shared.getExchangeRates { (success, usd) in
             self.toggleActivityIndicator(shown: false)
             if success, let usd = usd {
@@ -35,19 +66,7 @@ class ExchangeRatesViewController: UIViewController {
             }
         }
     }
-    
-    private func toggleActivityIndicator(shown: Bool) {
-        activityIndicator.isHidden = !shown
-    }
-    
-    private func update(rates: Rates) {
-        dollarExchangeLabel.text = String(rates.usd)
-    }
-    
-    private func presentAlert() {
-        let alertVC = UIAlertController(title: "Error", message: "exchange failed", preferredStyle: .alert)
-        alertVC.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
-        present(alertVC, animated: true, completion: nil)
-    }
 }
+
+
 

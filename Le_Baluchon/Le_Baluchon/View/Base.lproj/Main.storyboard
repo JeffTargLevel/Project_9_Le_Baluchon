@@ -47,7 +47,10 @@
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="decimalPad" returnKeyType="continue"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="continue"/>
+                                <connections>
+                                    <action selector="tapEuroTextField:forEvent:" destination="BYZ-38-t0r" eventType="editingChanged" id="Afl-Ao-j7C"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dollar" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uzp-hv-VvP">
                                 <rect key="frame" x="16" y="278" width="343" height="20"/>
@@ -68,8 +71,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="q32-CH-r0j">
-                                <rect key="frame" x="177.5" y="523" width="20" height="20"/>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="q32-CH-r0j">
+                                <rect key="frame" x="177.5" y="418" width="20" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="q32-CH-r0j" secondAttribute="height" multiplier="1:1" id="cVL-uI-WTS"/>
                                 </constraints>
@@ -84,7 +87,7 @@
                             <constraint firstItem="fEt-IP-5lB" firstAttribute="trailing" secondItem="Uzp-hv-VvP" secondAttribute="trailing" id="7Mw-rD-ZQ7"/>
                             <constraint firstItem="uRA-fc-WQT" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="E7a-19-PHZ"/>
                             <constraint firstItem="Hd4-Gy-nL9" firstAttribute="leading" secondItem="a6U-dQ-dCz" secondAttribute="leading" id="FNz-4I-obj"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="q32-CH-r0j" secondAttribute="bottom" constant="75" id="LTV-kM-suk"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="q32-CH-r0j" secondAttribute="bottom" constant="180" id="LTV-kM-suk"/>
                             <constraint firstItem="Hd4-Gy-nL9" firstAttribute="top" secondItem="a6U-dQ-dCz" secondAttribute="bottom" constant="8" id="Utf-3F-cHX"/>
                             <constraint firstItem="Hd4-Gy-nL9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Vdq-so-ryY"/>
                             <constraint firstItem="Hd4-Gy-nL9" firstAttribute="trailing" secondItem="a6U-dQ-dCz" secondAttribute="trailing" id="Vjp-JY-XNC"/>
@@ -109,8 +112,9 @@
                     <navigationItem key="navigationItem" id="dQC-Y9-Kqq"/>
                     <connections>
                         <outlet property="activityIndicator" destination="q32-CH-r0j" id="uBp-q0-DiQ"/>
+                        <outlet property="countryImageView" destination="uRA-fc-WQT" id="kqv-XN-l9d"/>
                         <outlet property="dollarExchangeLabel" destination="fEt-IP-5lB" id="0c6-r6-Xke"/>
-                        <outlet property="euroExchangeRatesTextField" destination="Hd4-Gy-nL9" id="bmy-Fv-CMP"/>
+                        <outlet property="euroTextField" destination="Hd4-Gy-nL9" id="bmy-Fv-CMP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
