@@ -32,9 +32,9 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Euro" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a6U-dQ-dCz">
-                                <rect key="frame" x="16" y="150" width="343" height="20"/>
+                                <rect key="frame" x="16" y="140" width="343" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="a6U-dQ-dCz" secondAttribute="height" multiplier="343:20" id="clJ-VH-nlw"/>
+                                    <constraint firstAttribute="width" secondItem="a6U-dQ-dCz" secondAttribute="height" multiplier="343:20" constant="-171.5" id="clJ-VH-nlw"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Copperplate-Bold" family="Copperplate" pointSize="20"/>
                                 <color key="textColor" red="0.0" green="0.56031829119999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -45,7 +45,7 @@
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Hd4-Gy-nL9" secondAttribute="height" multiplier="343:30" id="3fv-YC-nGa"/>
                                 </constraints>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="0.0" green="0.56031829119999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" keyboardType="decimalPad" returnKeyType="continue"/>
                                 <userDefinedRuntimeAttributes>
@@ -57,10 +57,10 @@
                                     <action selector="tapEuroTextField:forEvent:" destination="BYZ-38-t0r" eventType="editingChanged" id="Afl-Ao-j7C"/>
                                 </connections>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dollar" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uzp-hv-VvP">
-                                <rect key="frame" x="16" y="278" width="343" height="20"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="USD" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uzp-hv-VvP">
+                                <rect key="frame" x="16" y="268" width="343" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="Uzp-hv-VvP" secondAttribute="height" multiplier="343:20" id="rTW-Vl-kM6"/>
+                                    <constraint firstAttribute="width" secondItem="Uzp-hv-VvP" secondAttribute="height" multiplier="343:20" constant="-171.5" id="rTW-Vl-kM6"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Copperplate-Bold" family="Copperplate" pointSize="20"/>
                                 <color key="textColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -73,10 +73,10 @@
                                     <constraint firstAttribute="width" secondItem="fEt-IP-5lB" secondAttribute="height" multiplier="343:30" id="Ymg-hU-Tlw"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="20"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="q32-CH-r0j">
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="q32-CH-r0j">
                                 <rect key="frame" x="177.5" y="386" width="20" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="q32-CH-r0j" secondAttribute="height" multiplier="1:1" id="cVL-uI-WTS"/>
@@ -93,18 +93,18 @@
                             <constraint firstItem="uRA-fc-WQT" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="E7a-19-PHZ"/>
                             <constraint firstItem="Hd4-Gy-nL9" firstAttribute="leading" secondItem="a6U-dQ-dCz" secondAttribute="leading" id="FNz-4I-obj"/>
                             <constraint firstItem="q32-CH-r0j" firstAttribute="top" secondItem="fEt-IP-5lB" secondAttribute="bottom" constant="50" id="Mit-HM-Who"/>
+                            <constraint firstItem="a6U-dQ-dCz" firstAttribute="top" secondItem="6zA-Mb-kde" secondAttribute="bottom" constant="84" id="Quw-vF-cPR"/>
                             <constraint firstItem="Hd4-Gy-nL9" firstAttribute="top" secondItem="a6U-dQ-dCz" secondAttribute="bottom" constant="8" id="Utf-3F-cHX"/>
                             <constraint firstItem="Hd4-Gy-nL9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Vdq-so-ryY"/>
                             <constraint firstItem="Hd4-Gy-nL9" firstAttribute="trailing" secondItem="a6U-dQ-dCz" secondAttribute="trailing" id="Vjp-JY-XNC"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Hd4-Gy-nL9" secondAttribute="trailing" constant="16" id="b85-jm-y6F"/>
-                            <constraint firstItem="Uzp-hv-VvP" firstAttribute="top" secondItem="Hd4-Gy-nL9" secondAttribute="bottom" constant="70" id="dGF-te-p2c"/>
+                            <constraint firstItem="Uzp-hv-VvP" firstAttribute="top" secondItem="Hd4-Gy-nL9" secondAttribute="bottom" constant="60" id="dGF-te-p2c"/>
                             <constraint firstItem="uRA-fc-WQT" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="fYx-mH-Udz"/>
                             <constraint firstItem="6zA-Mb-kde" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="in0-xg-2aH"/>
                             <constraint firstItem="fEt-IP-5lB" firstAttribute="top" secondItem="Uzp-hv-VvP" secondAttribute="bottom" constant="8" id="lcf-NY-jxl"/>
                             <constraint firstItem="6zA-Mb-kde" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="p0h-ub-751"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="6zA-Mb-kde" secondAttribute="trailing" constant="16" id="qFW-Rc-pWC"/>
                             <constraint firstItem="fEt-IP-5lB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="tBd-8z-81k"/>
-                            <constraint firstItem="a6U-dQ-dCz" firstAttribute="top" secondItem="6zA-Mb-kde" secondAttribute="bottom" constant="94" id="tsv-TO-hxT"/>
                             <constraint firstItem="uRA-fc-WQT" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="vmJ-if-2CL"/>
                             <constraint firstItem="uRA-fc-WQT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="zC3-W8-h1P"/>
                         </constraints>
@@ -170,15 +170,75 @@
                                 <color key="textColor" red="0.0048598507420000003" green="0.096086271109999996" blue="0.57499289509999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Français" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v0c-ft-JLU">
+                                <rect key="frame" x="16" y="92" width="343" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="v0c-ft-JLU" secondAttribute="height" multiplier="343:30" id="VWh-Yd-yhO"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Copperplate-Bold" family="Copperplate" pointSize="20"/>
+                                <color key="textColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Anglais" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IfE-sw-Wsh">
+                                <rect key="frame" x="16" y="230" width="343" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="IfE-sw-Wsh" secondAttribute="height" multiplier="343:20" constant="-171.5" id="czR-GT-fyZ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Copperplate-Bold" family="Copperplate" pointSize="20"/>
+                                <color key="textColor" red="0.58072251080000004" green="0.066734083" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="fSs-lU-aeX">
+                                <rect key="frame" x="16" y="130" width="343" height="73"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="fSs-lU-aeX" secondAttribute="height" multiplier="343:73" id="7dl-6D-L9N"/>
+                                </constraints>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="JiV-AT-sqT">
+                                <rect key="frame" x="16" y="268" width="343" height="73"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="JiV-AT-sqT" secondAttribute="height" multiplier="343:73" id="V8j-dB-Otk"/>
+                                </constraints>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" red="0.58072251080000004" green="0.066734083" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="jDw-hU-acv">
+                                <rect key="frame" x="177.5" y="391" width="20" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="jDw-hU-acv" secondAttribute="height" multiplier="1:1" id="tYP-Yn-0lk"/>
+                                </constraints>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="0.47684186699999997" green="0.50480759139999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="6rP-0s-wej" firstAttribute="leading" secondItem="uP0-VD-Erf" secondAttribute="leading" constant="16" id="38a-xJ-pb1"/>
+                            <constraint firstItem="fSs-lU-aeX" firstAttribute="leading" secondItem="v0c-ft-JLU" secondAttribute="leading" id="60d-e3-k2R"/>
+                            <constraint firstItem="JiV-AT-sqT" firstAttribute="leading" secondItem="IfE-sw-Wsh" secondAttribute="leading" id="AqE-VX-6rH"/>
+                            <constraint firstItem="JiV-AT-sqT" firstAttribute="leading" secondItem="uP0-VD-Erf" secondAttribute="leading" constant="16" id="D4Y-cc-ckN"/>
+                            <constraint firstItem="uP0-VD-Erf" firstAttribute="trailing" secondItem="JiV-AT-sqT" secondAttribute="trailing" constant="16" id="GVn-7K-JUL"/>
+                            <constraint firstItem="fSs-lU-aeX" firstAttribute="leading" secondItem="uP0-VD-Erf" secondAttribute="leading" constant="16" id="MSn-zH-872"/>
                             <constraint firstItem="KCh-di-AQc" firstAttribute="trailing" secondItem="uP0-VD-Erf" secondAttribute="trailing" id="Om8-VP-6i7"/>
                             <constraint firstItem="KCh-di-AQc" firstAttribute="leading" secondItem="uP0-VD-Erf" secondAttribute="leading" id="OwB-fU-OeG"/>
+                            <constraint firstItem="fSs-lU-aeX" firstAttribute="trailing" secondItem="v0c-ft-JLU" secondAttribute="trailing" id="U8k-Rp-lcW"/>
                             <constraint firstItem="KCh-di-AQc" firstAttribute="top" secondItem="OfY-Px-MFM" secondAttribute="top" id="VUA-UW-S7G"/>
+                            <constraint firstItem="uP0-VD-Erf" firstAttribute="trailing" secondItem="fSs-lU-aeX" secondAttribute="trailing" constant="16" id="W2y-Kt-raC"/>
+                            <constraint firstItem="IfE-sw-Wsh" firstAttribute="top" secondItem="fSs-lU-aeX" secondAttribute="bottom" constant="27" id="XHF-jg-NGL"/>
                             <constraint firstItem="6rP-0s-wej" firstAttribute="top" secondItem="uP0-VD-Erf" secondAttribute="top" id="XoH-T7-pld"/>
+                            <constraint firstItem="v0c-ft-JLU" firstAttribute="top" secondItem="6rP-0s-wej" secondAttribute="bottom" constant="36" id="YCW-m7-TJA"/>
+                            <constraint firstItem="jDw-hU-acv" firstAttribute="top" secondItem="JiV-AT-sqT" secondAttribute="bottom" constant="50" id="ah4-RJ-z56"/>
+                            <constraint firstItem="JiV-AT-sqT" firstAttribute="top" secondItem="IfE-sw-Wsh" secondAttribute="bottom" constant="8" id="de4-MP-slc"/>
+                            <constraint firstItem="jDw-hU-acv" firstAttribute="centerX" secondItem="OfY-Px-MFM" secondAttribute="centerX" id="fQW-Q2-wg4"/>
+                            <constraint firstItem="JiV-AT-sqT" firstAttribute="trailing" secondItem="IfE-sw-Wsh" secondAttribute="trailing" id="gkW-ai-2nW"/>
                             <constraint firstItem="KCh-di-AQc" firstAttribute="bottom" secondItem="uP0-VD-Erf" secondAttribute="bottom" id="m9L-5e-r7f"/>
+                            <constraint firstItem="fSs-lU-aeX" firstAttribute="top" secondItem="v0c-ft-JLU" secondAttribute="bottom" constant="8" id="o76-Bc-0VD"/>
                             <constraint firstItem="uP0-VD-Erf" firstAttribute="trailing" secondItem="6rP-0s-wej" secondAttribute="trailing" constant="16" id="qkC-TK-XG8"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="uP0-VD-Erf"/>
