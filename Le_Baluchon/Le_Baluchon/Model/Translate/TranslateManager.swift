@@ -12,7 +12,7 @@ class TranslateManager {
     static var shared = TranslateManager()
     private init() {}
 
-    private static let translateUrl = URL(string: "https://translation.googleapis.com/language/translate/v2?q=bonjour&target=en&format=text&source=fr&model=base&key=AIzaSyBsN1G7xicZttIlt0y8sTmJQ0suwmT1fSU")!
+    private static let translateUrl = URL(string: "https://translation.googleapis.com/language/translate/v2?q=bonjour&target=en&format=text&source=fr&model=base&")!
     
     private var task: URLSessionTask?
     
