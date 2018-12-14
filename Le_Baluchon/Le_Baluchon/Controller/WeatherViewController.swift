@@ -10,21 +10,40 @@ import UIKit
 
 class WeatherViewController: UIViewController {
 
+    @IBOutlet weak var parisTemperatureLabel: UILabel!
+    @IBOutlet weak var parisConditionsLabel: UILabel!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    private func toggleActivityIndicator(shown: Bool) {
+        activityIndicator.isHidden = !shown
     }
-    */
+    
+    private func update(conditions: Conditions) {
+       parisTemperatureLabel.text = conditions.temperature
+        parisConditionsLabel.text = conditions.currentConditions
+        
+    }
+    
+    @IBAction func tapForUpdate(_ sender: UITapGestureRecognizer) {
+        toggleActivityIndicator(shown: true)
+        WeatherManager.shared.getWeather { (success, conditions) in
+            self.toggleActivityIndicator(shown: false)
+            if success, let conditions = conditions {
+                self.update(conditions: conditions)
+            } else {
+                self.presentAlert()
+            }
+        }
+    }
+    
+    private func presentAlert() {
+        let alertVC = UIAlertController(title: "Error", message: "Update failed", preferredStyle: .alert)
+        alertVC.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+        present(alertVC, animated: true, completion: nil)
+    }
 
 }

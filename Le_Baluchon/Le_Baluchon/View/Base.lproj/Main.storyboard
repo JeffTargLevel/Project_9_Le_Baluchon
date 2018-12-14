@@ -27,7 +27,7 @@
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="6zA-Mb-kde" secondAttribute="height" multiplier="343:36" id="WFm-Qs-tov"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Copperplate-Bold" family="Copperplate" pointSize="25"/>
+                                <fontDescription key="fontDescription" name="Copperplate-Bold" family="Copperplate" pointSize="30"/>
                                 <color key="textColor" red="0.0048598507420000003" green="0.096086271109999996" blue="0.57499289509999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -36,7 +36,7 @@
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="a6U-dQ-dCz" secondAttribute="height" multiplier="343:20" constant="-171.5" id="clJ-VH-nlw"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Copperplate-Bold" family="Copperplate" pointSize="20"/>
+                                <fontDescription key="fontDescription" name="Copperplate-Bold" family="Copperplate" pointSize="25"/>
                                 <color key="textColor" red="0.0" green="0.56031829119999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -47,7 +47,7 @@
                                 </constraints>
                                 <color key="textColor" red="0.0" green="0.56031829119999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="20"/>
-                                <textInputTraits key="textInputTraits" keyboardType="decimalPad" returnKeyType="continue"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="continue"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="maxLength">
                                         <integer key="value" value="10"/>
@@ -62,8 +62,8 @@
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Uzp-hv-VvP" secondAttribute="height" multiplier="343:20" constant="-171.5" id="rTW-Vl-kM6"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Copperplate-Bold" family="Copperplate" pointSize="20"/>
-                                <color key="textColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Copperplate-Bold" family="Copperplate" pointSize="25"/>
+                                <color key="textColor" red="0.58072251080000004" green="0.066734083" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fEt-IP-5lB">
@@ -73,7 +73,7 @@
                                     <constraint firstAttribute="width" secondItem="fEt-IP-5lB" secondAttribute="height" multiplier="343:30" id="Ymg-hU-Tlw"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="20"/>
-                                <color key="textColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" red="0.58072251080000004" green="0.066734083" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="q32-CH-r0j">
@@ -160,13 +160,14 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="france-flag-std" translatesAutoresizingMaskIntoConstraints="NO" id="KCh-di-AQc">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                                <gestureRecognizers/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Traducteur" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6rP-0s-wej">
                                 <rect key="frame" x="16" y="20" width="343" height="36"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="6rP-0s-wej" secondAttribute="height" multiplier="343:36" id="3JU-t8-B5e"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Copperplate-Bold" family="Copperplate" pointSize="25"/>
+                                <fontDescription key="fontDescription" name="Copperplate-Bold" family="Copperplate" pointSize="30"/>
                                 <color key="textColor" red="0.0048598507420000003" green="0.096086271109999996" blue="0.57499289509999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -175,7 +176,7 @@
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="v0c-ft-JLU" secondAttribute="height" multiplier="343:30" id="VWh-Yd-yhO"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Copperplate-Bold" family="Copperplate" pointSize="20"/>
+                                <fontDescription key="fontDescription" name="Copperplate-Bold" family="Copperplate" pointSize="25"/>
                                 <color key="textColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -184,28 +185,26 @@
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="IfE-sw-Wsh" secondAttribute="height" multiplier="343:20" constant="-171.5" id="czR-GT-fyZ"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Copperplate-Bold" family="Copperplate" pointSize="20"/>
+                                <fontDescription key="fontDescription" name="Copperplate-Bold" family="Copperplate" pointSize="25"/>
                                 <color key="textColor" red="0.58072251080000004" green="0.066734083" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="fSs-lU-aeX">
+                            <textView clipsSubviews="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="fSs-lU-aeX">
                                 <rect key="frame" x="16" y="130" width="343" height="73"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="fSs-lU-aeX" secondAttribute="height" multiplier="343:73" id="7dl-6D-L9N"/>
                                 </constraints>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <color key="textColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
                             </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="JiV-AT-sqT">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JiV-AT-sqT">
                                 <rect key="frame" x="16" y="268" width="343" height="73"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="JiV-AT-sqT" secondAttribute="height" multiplier="343:73" id="V8j-dB-Otk"/>
                                 </constraints>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <color key="textColor" red="0.58072251080000004" green="0.066734083" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -218,6 +217,7 @@
                             </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="0.47684186699999997" green="0.50480759139999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="6rP-0s-wej" firstAttribute="leading" secondItem="uP0-VD-Erf" secondAttribute="leading" constant="16" id="38a-xJ-pb1"/>
                             <constraint firstItem="fSs-lU-aeX" firstAttribute="leading" secondItem="v0c-ft-JLU" secondAttribute="leading" id="60d-e3-k2R"/>
@@ -242,11 +242,25 @@
                             <constraint firstItem="uP0-VD-Erf" firstAttribute="trailing" secondItem="6rP-0s-wej" secondAttribute="trailing" constant="16" id="qkC-TK-XG8"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="uP0-VD-Erf"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="4bJ-jL-sx0" appends="YES" id="1AY-zb-6kl"/>
+                        </connections>
                     </view>
                     <tabBarItem key="tabBarItem" title="Traducteur" id="f95-Kq-01S"/>
                     <navigationItem key="navigationItem" id="xg0-6r-fib"/>
+                    <connections>
+                        <outlet property="activityIndicator" destination="jDw-hU-acv" id="rVD-zr-hbd"/>
+                        <outlet property="countryImageView" destination="KCh-di-AQc" id="pcJ-vi-XAv"/>
+                        <outlet property="sourceFrenchTextView" destination="fSs-lU-aeX" id="LAv-AO-Otf"/>
+                        <outlet property="translateEnglishTextView" destination="JiV-AT-sqT" id="QqD-s1-bB1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eqk-KJ-Nh4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="4bJ-jL-sx0">
+                    <connections>
+                        <action selector="dissmissKeyboard:" destination="exf-vA-L5E" id="2ys-ej-stx"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="509.60000000000002" y="352.17391304347831"/>
         </scene>
@@ -266,34 +280,194 @@
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Lbi-pS-CvX" secondAttribute="height" multiplier="343:36" id="aZ9-UN-i8e"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Copperplate-Bold" family="Copperplate" pointSize="25"/>
+                                <fontDescription key="fontDescription" name="Copperplate-Bold" family="Copperplate" pointSize="30"/>
                                 <color key="textColor" red="0.0048598507420000003" green="0.096086271109999996" blue="0.57499289509999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="obb-b5-JPD">
+                                <rect key="frame" x="177.5" y="578" width="20" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="obb-b5-JPD" secondAttribute="height" multiplier="1:1" id="Qcg-rn-Af0"/>
+                                </constraints>
+                            </activityIndicatorView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="fMH-ZQ-9ld" userLabel="Stack View New York">
+                                <rect key="frame" x="16" y="349" width="198" height="105"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New York" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dcg-r9-k1k">
+                                        <rect key="frame" x="0.0" y="0.0" width="198" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="Ffl-Dl-L8W"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Copperplate-Bold" family="Copperplate" pointSize="25"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Température" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T3H-7g-Jpa">
+                                        <rect key="frame" x="0.0" y="21" width="198" height="21"/>
+                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="ZXU-Xk-8UK"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ieE-Qj-U2z">
+                                        <rect key="frame" x="0.0" y="42" width="198" height="21"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="XND-CI-KZr"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="20"/>
+                                        <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Conditions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Duc-LD-Otj">
+                                        <rect key="frame" x="0.0" y="63" width="198" height="21"/>
+                                        <color key="backgroundColor" red="0.58072251080000004" green="0.066734083" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="wug-L2-cVA"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8yA-vw-3Xr">
+                                        <rect key="frame" x="0.0" y="84" width="198" height="21"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="OPN-vR-gW3"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="20"/>
+                                        <color key="textColor" red="0.58072251080000004" green="0.066734083" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="fMH-ZQ-9ld" secondAttribute="height" multiplier="66:35" id="0WK-AP-ccs"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Qac-V9-JB5" userLabel="Stack View Paris">
+                                <rect key="frame" x="16" y="166" width="198" height="105"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Paris" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f7G-JY-RqA">
+                                        <rect key="frame" x="0.0" y="0.0" width="198" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="95X-pX-09e"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Copperplate-Bold" family="Copperplate" pointSize="25"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Température" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bNt-a7-lo7">
+                                        <rect key="frame" x="0.0" y="21" width="198" height="21"/>
+                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="lGC-oI-biA"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MC8-7M-opU">
+                                        <rect key="frame" x="0.0" y="42" width="198" height="21"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="ADF-YC-Iid"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="20"/>
+                                        <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Conditions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UJH-DI-LCG">
+                                        <rect key="frame" x="0.0" y="63" width="198" height="21"/>
+                                        <color key="backgroundColor" red="0.58072251080000004" green="0.066734083" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="UjG-HE-sex"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M3Z-U9-HIH">
+                                        <rect key="frame" x="0.0" y="84" width="198" height="21"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="BR1-ph-lp5"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="20"/>
+                                        <color key="textColor" red="0.58072251080000004" green="0.066734083" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Qac-V9-JB5" secondAttribute="height" multiplier="66:35" id="Tom-a2-hm3"/>
+                                </constraints>
+                            </stackView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="N8F-Tr-D3f">
+                                <rect key="frame" x="285" y="183.5" width="70" height="70"/>
+                                <color key="backgroundColor" red="0.58072251080000004" green="0.066734083" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="N8F-Tr-D3f" secondAttribute="height" multiplier="1:1" id="NX2-Hi-wfS"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Gqz-wU-rRz">
+                                <rect key="frame" x="284" y="366" width="71" height="71"/>
+                                <color key="backgroundColor" red="0.58072251080000004" green="0.066734083" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Gqz-wU-rRz" secondAttribute="height" multiplier="1:1" id="L24-LZ-o3V"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.47684186699999997" green="0.50480759139999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
                         <constraints>
+                            <constraint firstItem="Qac-V9-JB5" firstAttribute="top" secondItem="Lbi-pS-CvX" secondAttribute="bottom" constant="110" id="2Nw-qQ-E2K"/>
+                            <constraint firstItem="Gqz-wU-rRz" firstAttribute="centerY" secondItem="fMH-ZQ-9ld" secondAttribute="centerY" id="5D4-je-Lb2"/>
+                            <constraint firstItem="vWo-zG-ZiV" firstAttribute="trailing" secondItem="N8F-Tr-D3f" secondAttribute="trailing" constant="20" id="6BC-Vd-nTj"/>
+                            <constraint firstItem="fMH-ZQ-9ld" firstAttribute="leading" secondItem="vWo-zG-ZiV" secondAttribute="leading" constant="16" id="7KZ-xE-GRl"/>
+                            <constraint firstItem="obb-b5-JPD" firstAttribute="centerX" secondItem="41X-iV-hWB" secondAttribute="centerX" id="A4J-Ea-jEL"/>
                             <constraint firstItem="6bi-Yr-jrM" firstAttribute="leading" secondItem="vWo-zG-ZiV" secondAttribute="leading" id="Ixh-ym-JyX"/>
+                            <constraint firstItem="vWo-zG-ZiV" firstAttribute="trailing" secondItem="Gqz-wU-rRz" secondAttribute="trailing" constant="20" id="KRR-U7-0P6"/>
+                            <constraint firstItem="Qac-V9-JB5" firstAttribute="leading" secondItem="vWo-zG-ZiV" secondAttribute="leading" constant="16" id="MOC-Vd-p2S"/>
+                            <constraint firstItem="Gqz-wU-rRz" firstAttribute="top" secondItem="N8F-Tr-D3f" secondAttribute="bottom" constant="112.5" id="Pda-UF-NoN"/>
                             <constraint firstItem="Lbi-pS-CvX" firstAttribute="top" secondItem="vWo-zG-ZiV" secondAttribute="top" id="Q8y-5a-IX1"/>
                             <constraint firstItem="6bi-Yr-jrM" firstAttribute="trailing" secondItem="vWo-zG-ZiV" secondAttribute="trailing" id="RIT-wB-Jwj"/>
+                            <constraint firstItem="N8F-Tr-D3f" firstAttribute="centerY" secondItem="Qac-V9-JB5" secondAttribute="centerY" id="Tsh-Dv-Dpq"/>
+                            <constraint firstItem="N8F-Tr-D3f" firstAttribute="top" secondItem="Lbi-pS-CvX" secondAttribute="bottom" constant="127.5" id="Zli-SI-hOH"/>
+                            <constraint firstItem="vWo-zG-ZiV" firstAttribute="bottom" secondItem="obb-b5-JPD" secondAttribute="bottom" constant="20" id="gsv-rI-orn"/>
                             <constraint firstItem="vWo-zG-ZiV" firstAttribute="trailing" secondItem="Lbi-pS-CvX" secondAttribute="trailing" constant="16" id="jEz-xQ-iI7"/>
                             <constraint firstItem="6bi-Yr-jrM" firstAttribute="bottom" secondItem="vWo-zG-ZiV" secondAttribute="bottom" id="nWg-H1-yvF"/>
                             <constraint firstItem="6bi-Yr-jrM" firstAttribute="top" secondItem="41X-iV-hWB" secondAttribute="top" id="rGO-JX-GT5"/>
+                            <constraint firstItem="fMH-ZQ-9ld" firstAttribute="top" secondItem="Qac-V9-JB5" secondAttribute="bottom" constant="78" id="vpB-Ew-IfH"/>
                             <constraint firstItem="Lbi-pS-CvX" firstAttribute="leading" secondItem="vWo-zG-ZiV" secondAttribute="leading" constant="16" id="xEo-dX-xjh"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="vWo-zG-ZiV"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="8OI-fi-uSu" appends="YES" id="yFi-Ix-Pxb"/>
+                        </connections>
                     </view>
                     <tabBarItem key="tabBarItem" title="Météo" id="icw-ak-YSs"/>
                     <navigationItem key="navigationItem" id="mU4-XX-8sM"/>
+                    <connections>
+                        <outlet property="activityIndicator" destination="obb-b5-JPD" id="7Bd-q6-B3Q"/>
+                        <outlet property="parisConditionsLabel" destination="M3Z-U9-HIH" id="1GR-N6-DP1"/>
+                        <outlet property="parisTemperatureLabel" destination="MC8-7M-opU" id="STV-EO-tMi"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ENq-So-iac" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="8OI-fi-uSu">
+                    <connections>
+                        <action selector="tapForUpdate:" destination="BRL-4z-neV" id="Nmr-eY-s0S"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="509.60000000000002" y="1145.577211394303"/>
+            <point key="canvasLocation" x="508" y="1143.7781109445277"/>
         </scene>
     </scenes>
     <resources>
-        <image name="european-union-flag-std" width="800" height="800"/>
-        <image name="france-flag-std" width="800" height="800"/>
-        <image name="usa-flag-std_1" width="800" height="800"/>
+        <image name="european-union-flag-std" width="512" height="512"/>
+        <image name="france-flag-std" width="512" height="512"/>
+        <image name="usa-flag-std_1" width="512" height="512"/>
     </resources>
 </document>

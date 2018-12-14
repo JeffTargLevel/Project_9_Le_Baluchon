@@ -39,6 +39,7 @@ class ExchangeRatesManager {
                     callback(false, nil)
                     return
                 }
+                print(String(data: data, encoding: .utf8))
                 guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
                     callback(false, nil)
                     return
@@ -47,6 +48,7 @@ class ExchangeRatesManager {
                     callback(false, nil)
                     return
                 }
+                
                 let rates = Rates(usd: usd)
                 callback(true, rates)
             }

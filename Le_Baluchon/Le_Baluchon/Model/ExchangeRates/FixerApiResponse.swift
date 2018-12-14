@@ -8,6 +8,6 @@
 
 import Foundation
 
-struct FixerApiResponse: Decodable {
+struct FixerApiResponse: Codable {
     let rates: [String: Double]
 }
