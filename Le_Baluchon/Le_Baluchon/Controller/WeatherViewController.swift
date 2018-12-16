@@ -12,6 +12,8 @@ class WeatherViewController: UIViewController {
 
     @IBOutlet weak var parisTemperatureLabel: UILabel!
     @IBOutlet weak var parisConditionsLabel: UILabel!
+    @IBOutlet weak var newYorkTemperatureLabel: UILabel!
+    @IBOutlet weak var newYorkConditionsLabel: UILabel!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     override func viewDidLoad() {

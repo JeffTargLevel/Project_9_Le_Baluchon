@@ -9,6 +9,5 @@
 import Foundation
 
 struct GoogleTranslateApiResponse: Codable {
-    var translations: [String: String]
-    
+    var data: GoogleTranslateApiData
 }

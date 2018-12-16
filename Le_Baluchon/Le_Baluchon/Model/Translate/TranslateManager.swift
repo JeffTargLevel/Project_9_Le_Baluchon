@@ -11,12 +11,14 @@ import Foundation
 class TranslateManager {
     static var shared = TranslateManager()
     private init() {}
-
-    private static let translateUrl = URL(string: "https://translation.googleapis.com/language/translate/v2?q=bonjour&target=en&format=text&source=fr&model=base&")!
+    
+    private static let translateUrl = URL(string: "https://translation.googleapis.com/language/translate/v2?target=en&format=text&source=fr&model=base&")!
     
     private var task: URLSessionTask?
     
     private var translateSession = URLSession(configuration: .default)
+    
+    var french = String()
     
     init(translateSession: URLSession) {
         self.translateSession = translateSession
@@ -25,6 +27,8 @@ class TranslateManager {
     private func createTranslateRequest() -> URLRequest {
         var request = URLRequest(url: TranslateManager.translateUrl)
         request.httpMethod = "POST"
+        let body = "q=\(french)"
+        request.httpBody = body.data(using: .utf8)
         return request
     }
     
@@ -39,23 +43,20 @@ class TranslateManager {
                     callback(false, nil)
                     return
                 }
-                print(String(data: data, encoding: .utf8))
                 guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
                     callback(false, nil)
                     return
                 }
-                guard let responseJSON = try? JSONDecoder().decode(GoogleTranslateApiResponse.self, from: data), let english = responseJSON.translations["translatedText"] else {
+                guard let responseJSON = try? JSONDecoder().decode(GoogleTranslateApiResponse.self, from: data), let english = responseJSON.data.translation else {
                     callback(false, nil)
                     return
                 }
-                
-                
                 let translation = Translate(english: english)
                 callback(true, translation)
-                
             }
         }
         task?.resume()
     }
 }
+
 
