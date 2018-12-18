@@ -9,6 +9,36 @@
 import Foundation
 
 struct YahooWeatherApiResponse: Codable {
-    var temperature: [String: String]
-    var currentConditions: [String: String]
+    let query: Query
 }
+
+struct Query: Codable {
+    let results: Results
+}
+
+struct Results: Codable {
+    let channel: Channel
+}
+
+struct Channel: Codable {
+    let item: Item
+    
+}
+
+struct Item: Codable {
+    let condition: Condition
+}
+
+struct Condition: Codable {
+    let temp:String?
+    let text: String?
+}
+
+
+
+
+    
+    
+    
+    
+

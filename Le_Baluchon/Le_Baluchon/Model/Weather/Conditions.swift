@@ -8,7 +8,12 @@
 
 import Foundation
 
-struct Conditions {
+struct ParisConditions {
+    var temperature: String
+    var currentConditions: String
+}
+
+struct NewYorkConditions {
     var temperature: String
     var currentConditions: String
 }

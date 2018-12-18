@@ -34,7 +34,7 @@ class TranslateViewController: UIViewController {
     // MARK: - Update french and translation english text view
     
     private func updateFrenchText() {
-        TranslateManager.shared.french = sourceFrenchTextView.text
+        TranslateManager.shared.french.french = sourceFrenchTextView.text
     }
     
     private func update(translate: Translate) {
@@ -76,4 +76,5 @@ class TranslateViewController: UIViewController {
         }
     }
 }
+
 

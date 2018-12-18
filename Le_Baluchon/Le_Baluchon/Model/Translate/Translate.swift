@@ -11,3 +11,7 @@ import Foundation
 struct Translate {
     var english: String
 }
+
+struct OriginalLanguage {
+    var french = String()
+}

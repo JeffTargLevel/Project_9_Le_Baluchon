@@ -303,7 +303,7 @@
                                 <color key="textColor" red="0.0048598507420000003" green="0.096086271109999996" blue="0.57499289509999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="obb-b5-JPD">
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="obb-b5-JPD">
                                 <rect key="frame" x="177.5" y="578" width="20" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="obb-b5-JPD" secondAttribute="height" multiplier="1:1" id="Qcg-rn-Af0"/>

@@ -18,7 +18,7 @@ class TranslateManager {
     
     private var translateSession = URLSession(configuration: .default)
     
-    var french = String()
+    var french = OriginalLanguage()
     
     init(translateSession: URLSession) {
         self.translateSession = translateSession
@@ -27,7 +27,7 @@ class TranslateManager {
     private func createTranslateRequest() -> URLRequest {
         var request = URLRequest(url: TranslateManager.translateUrl)
         request.httpMethod = "POST"
-        let body = "q=\(french)"
+        let body = "q=\(String(describing: french.french))"
         request.httpBody = body.data(using: .utf8)
         return request
     }
@@ -47,16 +47,15 @@ class TranslateManager {
                     callback(false, nil)
                     return
                 }
-                guard let responseJSON = try? JSONDecoder().decode(GoogleTranslateApiResponse.self, from: data), let english = responseJSON.data.translation else {
+                guard let responseJSON = try? JSONDecoder().decode(GoogleTranslateApiResponse.self, from: data), let english = responseJSON.data.translations[0].translatedText else {
                     callback(false, nil)
                     return
                 }
                 let translation = Translate(english: english)
+                print(translation)
                 callback(true, translation)
             }
         }
         task?.resume()
     }
 }
-
-
