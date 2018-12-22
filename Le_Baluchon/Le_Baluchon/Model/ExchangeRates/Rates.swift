@@ -9,5 +9,5 @@
 import Foundation
 
 struct Rates {
-    var usd: Double
+    var ratesCountries: [String: Double]
 }

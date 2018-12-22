@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		622CB5FC21CD446C00D83B65 /* CountriesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 622CB5FB21CD446C00D83B65 /* CountriesList.swift */; };
 		6237425921C6D02000777E99 /* GoogleTranslateApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6237425821C6D02000777E99 /* GoogleTranslateApiResponse.swift */; };
 		6240A78E21BEBFEB0003AD41 /* ExtensionUITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6240A78D21BEBFEB0003AD41 /* ExtensionUITextField.swift */; };
 		624EE6ED21C2C364000D0D5C /* WeatherManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 624EE6EC21C2C364000D0D5C /* WeatherManager.swift */; };
@@ -28,6 +29,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		622CB5FB21CD446C00D83B65 /* CountriesList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesList.swift; sourceTree = "<group>"; };
 		6237425821C6D02000777E99 /* GoogleTranslateApiResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleTranslateApiResponse.swift; sourceTree = "<group>"; };
 		6240A78D21BEBFEB0003AD41 /* ExtensionUITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionUITextField.swift; sourceTree = "<group>"; };
 		624EE6EC21C2C364000D0D5C /* WeatherManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherManager.swift; sourceTree = "<group>"; };
@@ -153,6 +155,7 @@
 				62D1258C21BA725D0086D67F /* ExchangeRatesManager.swift */,
 				62D48F4221BC240A00ED6F66 /* FixerApiResponse.swift */,
 				62D1258E21BA77450086D67F /* Rates.swift */,
+				622CB5FB21CD446C00D83B65 /* CountriesList.swift */,
 			);
 			path = ExchangeRates;
 			sourceTree = "<group>";
@@ -253,6 +256,7 @@
 				625A759021B8149E00E26356 /* AppDelegate.swift in Sources */,
 				62D1258F21BA77450086D67F /* Rates.swift in Sources */,
 				625A75AA21B8180A00E26356 /* TranslateViewController.swift in Sources */,
+				622CB5FC21CD446C00D83B65 /* CountriesList.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

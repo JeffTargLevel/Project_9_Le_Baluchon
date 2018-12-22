@@ -15,6 +15,7 @@ class WeatherViewController: UIViewController {
     @IBOutlet weak var newYorkTemperatureLabel: UILabel!
     @IBOutlet weak var newYorkConditionsLabel: UILabel!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var cityImageView: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,7 +38,7 @@ class WeatherViewController: UIViewController {
         newYorkConditionsLabel.text = newYorkConditions.currentConditions
     }
     
-    // MARK: - Update city request
+    // MARK: - Update city request and update city image
     
     private func updateParisRequest() {
         toggleActivityIndicator(shown: true)
@@ -63,10 +64,20 @@ class WeatherViewController: UIViewController {
         }
     }
     
-    // MARK: - Perform New York request and alert controller
+    // MARK: - Perform New York request, animation images and alert controller
     
     private func performRequest() {
         Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.updateNewYorkRequest), userInfo: nil, repeats: false)
+    }
+    
+    func imagesAnimated() {
+        let parisImage = #imageLiteral(resourceName: "Paris")
+        let newYorkImage = #imageLiteral(resourceName: "New_York")
+        let imgListArray: [UIImage] = [parisImage, newYorkImage]
+        
+        cityImageView.animationImages = imgListArray
+        cityImageView.animationDuration = 20
+        cityImageView.startAnimating()
     }
     
     private func presentAlert() {
@@ -80,6 +91,7 @@ class WeatherViewController: UIViewController {
     @IBAction func tapForUpdate(_ sender: UITapGestureRecognizer) {
         updateParisRequest()
         performRequest()
+        imagesAnimated()
     }
 }
 

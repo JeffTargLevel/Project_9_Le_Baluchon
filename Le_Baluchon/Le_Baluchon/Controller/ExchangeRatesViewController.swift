@@ -8,31 +8,52 @@
 
 import UIKit
 
-class ExchangeRatesViewController: UIViewController {
+class ExchangeRatesViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
     @IBOutlet weak var euroTextField: UITextField!
+    @IBOutlet weak var countryExchangeLabel: UILabel!
     @IBOutlet weak var dollarExchangeLabel: UILabel!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
-    @IBOutlet weak var countryImageView: UIImageView!
+    @IBOutlet weak var countriesRatesPickerView: UIPickerView!
+    
+    private let countriesSymbols = [String](symbols.keys)
     
     override func viewDidLoad() {
         super.viewDidLoad()
         toggleActivityIndicator(shown: false)
+        updateExchangeLabel()
     }
     
     private func toggleActivityIndicator(shown: Bool) {
         activityIndicator.isHidden = !shown
     }
     
+    // MARK: - Picker view setting
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return symbols.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return countriesSymbols[row]
+    }
+    
     // MARK : - Update rates with euro base
     
     private func update(rates: Rates) {
         if (euroTextField.text?.count)! > 0 {
-            countryImageView.image = #imageLiteral(resourceName: "usa-flag-std_1")
-            let euro = Double(euroTextField.text!)
-            let usd = rates.usd
-            let resultExchange = euro! * usd
-            dollarExchangeLabel.text = String(resultExchange)
+            let countryIndex = countriesRatesPickerView.selectedRow(inComponent: 0)
+            let countrySymbol = countriesSymbols[countryIndex]
+            
+            if let rateValue = rates.ratesCountries[countrySymbol] {
+                let euro = Double(euroTextField.text!)
+                let resultExchange = euro! * rateValue
+                dollarExchangeLabel.text = String(resultExchange)
+            }
         } else if euroTextField.text?.count == 0 {
             clearEuroTextFieldAndDollarExchangeLabel()
         } else {
@@ -45,7 +66,13 @@ class ExchangeRatesViewController: UIViewController {
     private func clearEuroTextFieldAndDollarExchangeLabel() {
         euroTextField.text = ""
         dollarExchangeLabel.text = ""
-        countryImageView.image = #imageLiteral(resourceName: "european-union-flag-std")
+    }
+    
+    private func updateExchangeLabel() {
+        let countriesNames = [String](symbols.values)
+        let countryIndex = countriesRatesPickerView.selectedRow(inComponent: 0)
+        let countryName = countriesNames[countryIndex]
+        countryExchangeLabel.text = countryName
     }
     
     // MARK: - Alert view controller an error
@@ -61,14 +88,16 @@ class ExchangeRatesViewController: UIViewController {
     @IBAction func dismissKeyboard(_ sender: UITapGestureRecognizer) {
         euroTextField.resignFirstResponder()
         clearEuroTextFieldAndDollarExchangeLabel()
+        updateExchangeLabel()
     }
     
     @IBAction func tapEuroTextField(_ sender: Any, forEvent event: UIEvent) {
         toggleActivityIndicator(shown: true)
-        ExchangeRatesManager.shared.getExchangeRates { (success, usd) in
+        updateExchangeLabel()
+        ExchangeRatesManager.shared.getExchangeRates { (success, rate) in
             self.toggleActivityIndicator(shown: false)
-            if success, let usd = usd {
-                self.update(rates: usd)
+            if success, let rate = rate {
+                self.update(rates: rate)
             } else {
                 self.presentAlert()
             }

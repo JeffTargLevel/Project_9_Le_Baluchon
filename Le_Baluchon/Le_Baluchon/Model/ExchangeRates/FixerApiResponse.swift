@@ -9,5 +9,5 @@
 import Foundation
 
 struct FixerApiResponse: Codable {
-    let rates: [String: Double]
+    let rates: [String: Double]?
 }

@@ -12,7 +12,7 @@ class ExchangeRatesManager {
     static var shared = ExchangeRatesManager()
     private init() {}
     
-    private static let exchangeRatesUrl = URL(string: "http://data.fixer.io/api/latest?")!
+    private static let exchangeRatesUrl = URL(string: "http://data.fixer.io/api/latest?access_key=43b3cea4bcddba105c31a55d02fe56f8&format=1")!
     
     private var task: URLSessionTask?
     
@@ -43,11 +43,11 @@ class ExchangeRatesManager {
                     callback(false, nil)
                     return
                 }
-                guard let responseJSON = try? JSONDecoder().decode(FixerApiResponse.self, from: data), let usd = responseJSON.rates["USD"] else {
+                guard let responseJSON = try? JSONDecoder().decode(FixerApiResponse.self, from: data), let ratesCountries = responseJSON.rates else {
                     callback(false, nil)
                     return
                 }
-                let rates = Rates(usd: usd)
+                let rates = Rates(ratesCountries: ratesCountries)
                 callback(true, rates)
             }
         }

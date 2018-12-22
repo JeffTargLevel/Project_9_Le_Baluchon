@@ -39,8 +39,8 @@ class WeatherManager {
         
         task?.cancel()
         task = parisWeatherSession.dataTask(with: request) { (data, response, error) in
+            
             DispatchQueue.main.async {
-                
                 guard let data = data, error == nil else {
                     callback(false, nil)
                     return
@@ -53,7 +53,6 @@ class WeatherManager {
                     callback(false, nil)
                     return
                 }
-                
                 let conditions = ParisConditions(temperature: temperature, currentConditions: currentCondition)
                 print(conditions)
                 callback(true, conditions)
@@ -69,8 +68,8 @@ class WeatherManager {
         
         task?.cancel()
         task = newYorkWeatherSession.dataTask(with: request) { (data, response, error) in
+            
             DispatchQueue.main.async {
-                
                 guard let data = data, error == nil else {
                     callback(false, nil)
                     return
@@ -83,7 +82,6 @@ class WeatherManager {
                     callback(false, nil)
                     return
                 }
-                
                 let conditions = NewYorkConditions(temperature: temperature, currentConditions: currentCondition)
                 print(conditions)
                 callback(true, conditions)
