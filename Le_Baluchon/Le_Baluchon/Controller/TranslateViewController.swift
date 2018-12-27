@@ -8,11 +8,10 @@
 
 import UIKit
 
-class TranslateViewController: UIViewController {
+class TranslateViewController: UIViewController, UITextViewDelegate {
     
     @IBOutlet weak var sourceFrenchTextView: UITextView!
     @IBOutlet weak var translateEnglishTextView: UITextView!
-    @IBOutlet weak var translateButton: UIButton!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var countryImageView: UIImageView!
     
@@ -21,45 +20,17 @@ class TranslateViewController: UIViewController {
         toggleActivityIndicator(shown: false)
     }
     
-    // MARK: - Activity indicator and translate button management
+    // MARK: - Activity indicator management
     
     private func toggleActivityIndicator(shown: Bool) {
         activityIndicator.isHidden = !shown
     }
     
-    private func toggleTranslateButton(shown: Bool) {
-        translateButton.isHidden = !shown
-    }
+    // MARK: - Update request
     
-    // MARK: - Update french and translation english text view
-    
-    private func updateFrenchText() {
-        TranslateManager.shared.french.french = sourceFrenchTextView.text
-    }
-    
-    private func update(translate: Translate) {
-        translateEnglishTextView.text = translate.english
-    }
-    
-    // MARK: - Alert controller
-    
-    private func presentAlert() {
-        let alertVC = UIAlertController(title: "Error", message: "Translation failed", preferredStyle: .alert)
-        alertVC.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
-        present(alertVC, animated: true, completion: nil)
-    }
-    
-    // MARK: - Translate button and dissmiss keyboard action
-    
-    @IBAction func tapTranslateButton(_ sender: UIButton) {
-        toggleTranslateButton(shown: false)
-        toggleActivityIndicator(shown: true)
-        sourceFrenchTextView.resignFirstResponder()
-        updateFrenchText()
-        countryImageView.image = #imageLiteral(resourceName: "usa-flag-std_1")
+    private func updateRequest() {
         TranslateManager.shared.getTranslate { (success, english) in
             self.toggleActivityIndicator(shown: false)
-            self.toggleTranslateButton(shown: true)
             if success, let english = english {
                 self.update(translate: english)
             } else {
@@ -68,13 +39,44 @@ class TranslateViewController: UIViewController {
         }
     }
     
-    @IBAction func dissmissKeyboard(_ sender: UITapGestureRecognizer) {
-        sourceFrenchTextView.resignFirstResponder()
-        if sourceFrenchTextView.text.count == 0 {
+    // MARK: - Update french and translation english text view
+    
+    private func updateFrenchText() {
+        TranslateManager.shared.originalLanguage.french = sourceFrenchTextView.text
+        countryImageView.image = #imageLiteral(resourceName: "usa-flag-std_1")
+    }
+    
+    private func update(translate: Translate) {
+        translateEnglishTextView.text = translate.english
+    }
+    
+    // MARK: - Set return keyboard
+    
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        if (text == "\n") {
+            textView.resignFirstResponder()
+            toggleActivityIndicator(shown: true)
+            updateFrenchText()
+            updateRequest()
+        } else if sourceFrenchTextView.text.count <= 1 {
             translateEnglishTextView.text = ""
             countryImageView.image = #imageLiteral(resourceName: "france-flag-std")
         }
+        return true
+    }
+    
+    // MARK: - Alert controller
+    
+    private func presentAlert() {
+        presentAlert(withTitle: "Error", message: "Translation failed")
+    }
+    
+    // MARK: - Dissmiss keyboard action and clear text view
+    
+    @IBAction func dissmissKeyboardAndClearTextView(_ sender: UITapGestureRecognizer) {
+        sourceFrenchTextView.resignFirstResponder()
+        sourceFrenchTextView.text = ""
+        translateEnglishTextView.text = ""
+        countryImageView.image = #imageLiteral(resourceName: "france-flag-std")
     }
 }
-
-

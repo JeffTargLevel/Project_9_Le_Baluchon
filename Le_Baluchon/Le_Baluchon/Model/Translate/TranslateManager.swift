@@ -18,7 +18,7 @@ class TranslateManager {
     
     private var translateSession = URLSession(configuration: .default)
     
-    var french = OriginalLanguage()
+    var originalLanguage = OriginalLanguage()
     
     init(translateSession: URLSession) {
         self.translateSession = translateSession
@@ -27,7 +27,7 @@ class TranslateManager {
     private func createTranslateRequest() -> URLRequest {
         var request = URLRequest(url: TranslateManager.translateUrl)
         request.httpMethod = "POST"
-        let body = "q=\(String(describing: french.french))"
+        let body = "q=\(originalLanguage.french)"
         request.httpBody = body.data(using: .utf8)
         return request
     }

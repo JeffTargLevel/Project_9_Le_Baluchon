@@ -26,6 +26,7 @@
 		62D1258D21BA725D0086D67F /* ExchangeRatesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62D1258C21BA725D0086D67F /* ExchangeRatesManager.swift */; };
 		62D1258F21BA77450086D67F /* Rates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62D1258E21BA77450086D67F /* Rates.swift */; };
 		62D48F4321BC240A00ED6F66 /* FixerApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62D48F4221BC240A00ED6F66 /* FixerApiResponse.swift */; };
+		62EDB1F921D5475600E97278 /* ExtensionAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62EDB1F821D5475600E97278 /* ExtensionAlertController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		62D1258C21BA725D0086D67F /* ExchangeRatesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRatesManager.swift; sourceTree = "<group>"; };
 		62D1258E21BA77450086D67F /* Rates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rates.swift; sourceTree = "<group>"; };
 		62D48F4221BC240A00ED6F66 /* FixerApiResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixerApiResponse.swift; sourceTree = "<group>"; };
+		62EDB1F821D5475600E97278 /* ExtensionAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionAlertController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				62888C4D21D4D1FF004B29C7 /* ExtensionUITextField.swift */,
+				62EDB1F821D5475600E97278 /* ExtensionAlertController.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -244,6 +247,7 @@
 			files = (
 				625A75A821B817A600E26356 /* ExchangeRatesViewController.swift in Sources */,
 				62BC592821C0150200E5AEB4 /* TranslateManager.swift in Sources */,
+				62EDB1F921D5475600E97278 /* ExtensionAlertController.swift in Sources */,
 				624EE6F321C2C614000D0D5C /* Conditions.swift in Sources */,
 				624EE6F121C2C401000D0D5C /* YahooWeatherApiResponse.swift in Sources */,
 				624EE6ED21C2C364000D0D5C /* WeatherManager.swift in Sources */,

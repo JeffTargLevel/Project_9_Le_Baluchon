@@ -215,9 +215,12 @@
                                 </constraints>
                                 <color key="textColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="20"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" enablesReturnKeyAutomatically="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="exf-vA-L5E" id="lW6-IB-Pwo"/>
+                                </connections>
                             </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JiV-AT-sqT">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JiV-AT-sqT">
                                 <rect key="frame" x="16" y="268" width="343" height="73"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -227,20 +230,6 @@
                                 <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dap-oF-5Bt">
-                                <rect key="frame" x="83" y="557.5" width="209" height="40.5"/>
-                                <color key="backgroundColor" red="0.0048598507420000003" green="0.096086271109999996" blue="0.57499289509999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="dap-oF-5Bt" secondAttribute="height" multiplier="77:15" id="Oqf-pf-398"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="17"/>
-                                <state key="normal" title="Traduire">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="tapTranslateButton:" destination="exf-vA-L5E" eventType="touchUpInside" id="OyE-PU-eLu"/>
-                                </connections>
-                            </button>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="jDw-hU-acv">
                                 <rect key="frame" x="150" y="533" width="75" height="75"/>
                                 <constraints>
@@ -255,14 +244,12 @@
                             <constraint firstItem="uP0-VD-Erf" firstAttribute="trailing" secondItem="jDw-hU-acv" secondAttribute="trailing" constant="150" id="41H-kB-iy4"/>
                             <constraint firstItem="fSs-lU-aeX" firstAttribute="leading" secondItem="v0c-ft-JLU" secondAttribute="leading" id="60d-e3-k2R"/>
                             <constraint firstItem="JiV-AT-sqT" firstAttribute="leading" secondItem="IfE-sw-Wsh" secondAttribute="leading" id="AqE-VX-6rH"/>
-                            <constraint firstItem="uP0-VD-Erf" firstAttribute="trailing" secondItem="dap-oF-5Bt" secondAttribute="trailing" constant="83" id="Cf8-cf-gTW"/>
                             <constraint firstItem="JiV-AT-sqT" firstAttribute="leading" secondItem="uP0-VD-Erf" secondAttribute="leading" constant="16" id="D4Y-cc-ckN"/>
                             <constraint firstItem="uP0-VD-Erf" firstAttribute="trailing" secondItem="JiV-AT-sqT" secondAttribute="trailing" constant="16" id="GVn-7K-JUL"/>
                             <constraint firstItem="uP0-VD-Erf" firstAttribute="bottom" secondItem="jDw-hU-acv" secondAttribute="bottom" constant="10" id="HgT-VE-Vyb"/>
                             <constraint firstItem="fSs-lU-aeX" firstAttribute="leading" secondItem="uP0-VD-Erf" secondAttribute="leading" constant="16" id="MSn-zH-872"/>
                             <constraint firstItem="KCh-di-AQc" firstAttribute="trailing" secondItem="uP0-VD-Erf" secondAttribute="trailing" id="Om8-VP-6i7"/>
                             <constraint firstItem="KCh-di-AQc" firstAttribute="leading" secondItem="uP0-VD-Erf" secondAttribute="leading" id="OwB-fU-OeG"/>
-                            <constraint firstItem="dap-oF-5Bt" firstAttribute="leading" secondItem="uP0-VD-Erf" secondAttribute="leading" constant="83" id="R79-9G-dbi"/>
                             <constraint firstItem="fSs-lU-aeX" firstAttribute="trailing" secondItem="v0c-ft-JLU" secondAttribute="trailing" id="U8k-Rp-lcW"/>
                             <constraint firstItem="KCh-di-AQc" firstAttribute="top" secondItem="OfY-Px-MFM" secondAttribute="top" id="VUA-UW-S7G"/>
                             <constraint firstItem="uP0-VD-Erf" firstAttribute="trailing" secondItem="fSs-lU-aeX" secondAttribute="trailing" constant="16" id="W2y-Kt-raC"/>
@@ -270,7 +257,6 @@
                             <constraint firstItem="6rP-0s-wej" firstAttribute="top" secondItem="uP0-VD-Erf" secondAttribute="top" id="XoH-T7-pld"/>
                             <constraint firstItem="v0c-ft-JLU" firstAttribute="top" secondItem="6rP-0s-wej" secondAttribute="bottom" constant="36" id="YCW-m7-TJA"/>
                             <constraint firstItem="jDw-hU-acv" firstAttribute="leading" secondItem="uP0-VD-Erf" secondAttribute="leading" constant="150" id="cnB-UV-V0E"/>
-                            <constraint firstItem="uP0-VD-Erf" firstAttribute="bottom" secondItem="dap-oF-5Bt" secondAttribute="bottom" constant="20" id="cxR-ca-k8s"/>
                             <constraint firstItem="JiV-AT-sqT" firstAttribute="top" secondItem="IfE-sw-Wsh" secondAttribute="bottom" constant="8" id="de4-MP-slc"/>
                             <constraint firstItem="JiV-AT-sqT" firstAttribute="trailing" secondItem="IfE-sw-Wsh" secondAttribute="trailing" id="gkW-ai-2nW"/>
                             <constraint firstItem="KCh-di-AQc" firstAttribute="bottom" secondItem="uP0-VD-Erf" secondAttribute="bottom" id="m9L-5e-r7f"/>
@@ -288,14 +274,13 @@
                         <outlet property="activityIndicator" destination="jDw-hU-acv" id="rVD-zr-hbd"/>
                         <outlet property="countryImageView" destination="KCh-di-AQc" id="pcJ-vi-XAv"/>
                         <outlet property="sourceFrenchTextView" destination="fSs-lU-aeX" id="LAv-AO-Otf"/>
-                        <outlet property="translateButton" destination="dap-oF-5Bt" id="jn5-yU-Mdu"/>
                         <outlet property="translateEnglishTextView" destination="JiV-AT-sqT" id="QqD-s1-bB1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eqk-KJ-Nh4" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="4bJ-jL-sx0">
                     <connections>
-                        <action selector="dissmissKeyboard:" destination="exf-vA-L5E" id="2ys-ej-stx"/>
+                        <action selector="dissmissKeyboardAndClearTextView:" destination="exf-vA-L5E" id="2ys-ej-stx"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>

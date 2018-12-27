@@ -81,9 +81,7 @@ class WeatherViewController: UIViewController {
     }
     
     private func presentAlert() {
-        let alertVC = UIAlertController(title: "Error", message: "Update weather failed", preferredStyle: .alert)
-        alertVC.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
-        present(alertVC, animated: true, completion: nil)
+        presentAlert(withTitle: "Error", message: "Update weather failed")
     }
     
     // MARK: - Tap for update

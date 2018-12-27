@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ExchangeRatesViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class ExchangeRatesViewController: UIViewController {
     
     @IBOutlet weak var euroTextField: UITextField!
     @IBOutlet weak var countryExchangeLabel: UILabel!
@@ -28,33 +28,39 @@ class ExchangeRatesViewController: UIViewController, UIPickerViewDelegate, UIPic
     private func toggleActivityIndicator(shown: Bool) {
         activityIndicator.isHidden = !shown
     }
+}
+
+// MARK: - Picker view setting
+
+extension ExchangeRatesViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     
-    // MARK: - Picker view setting
-    
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+    internal func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
     
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+    internal func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return symbols.count
     }
     
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+    internal func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         updateCountryExchangeLabel()
         if (euroTextField.text?.count)! > 0 {
-        update(rates: rate!)
+            update(rates: rate!)
         }
         return countriesSymbols[row]
     }
-    
-    // MARK : - Update request and rates with euro base
+}
+
+// MARK: - Update request and rates with euro base
+
+extension ExchangeRatesViewController {
     
     private func updateRequest() {
         toggleActivityIndicator(shown: true)
         ExchangeRatesManager.shared.getExchangeRates { (success, rate) in
             self.toggleActivityIndicator(shown: false)
             if success {
-               self.rate = rate
+                self.rate = rate
             } else {
                 self.presentAlert()
             }
@@ -77,8 +83,11 @@ class ExchangeRatesViewController: UIViewController, UIPickerViewDelegate, UIPic
             presentAlert()
         }
     }
-    
-    // MARK: - Clear euro text field and result exchange label
+}
+
+// MARK: - Clear euro text field and result exchange label
+
+extension ExchangeRatesViewController {
     
     private func clearEuroTextFieldAndResultExchangeLabel() {
         euroTextField.text = ""
@@ -96,12 +105,12 @@ class ExchangeRatesViewController: UIViewController, UIPickerViewDelegate, UIPic
     // MARK: - Alert view controller an error
     
     private func presentAlert() {
-        let alertVC = UIAlertController(title: "Error", message: "Exchange failed", preferredStyle: .alert)
-        alertVC.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
-        present(alertVC, animated: true, completion: nil)
+        presentAlert(withTitle: "Error", message: "Exchange failed")
     }
-    
-    // MARK: - Action dissmiss keyboard and tap euro text field
+}
+// MARK: - Action dissmiss keyboard and tap euro text field
+
+extension ExchangeRatesViewController {
     
     @IBAction func dismissKeyboard(_ sender: UITapGestureRecognizer) {
         euroTextField.resignFirstResponder()
@@ -113,3 +122,4 @@ class ExchangeRatesViewController: UIViewController, UIPickerViewDelegate, UIPic
         update(rates: rate!)
     }
 }
+
