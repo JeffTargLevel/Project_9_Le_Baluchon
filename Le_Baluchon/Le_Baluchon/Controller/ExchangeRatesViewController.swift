@@ -111,11 +111,5 @@ class ExchangeRatesViewController: UIViewController, UIPickerViewDelegate, UIPic
     
     @IBAction func tapEuroTextField(_ sender: UITextField, forEvent event: UIEvent) {
         update(rates: rate!)
-        
-        
     }
-    
-    
-    
-    
 }
