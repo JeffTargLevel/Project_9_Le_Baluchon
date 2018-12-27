@@ -12,16 +12,17 @@ class ExchangeRatesViewController: UIViewController, UIPickerViewDelegate, UIPic
     
     @IBOutlet weak var euroTextField: UITextField!
     @IBOutlet weak var countryExchangeLabel: UILabel!
-    @IBOutlet weak var dollarExchangeLabel: UILabel!
+    @IBOutlet weak var resultExchangeLabel: UILabel!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var countriesRatesPickerView: UIPickerView!
     
     private let countriesSymbols = [String](symbols.keys)
+    private var rate: Rates?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         toggleActivityIndicator(shown: false)
-        updateExchangeLabel()
+        updateRequest()
     }
     
     private func toggleActivityIndicator(shown: Bool) {
@@ -39,10 +40,26 @@ class ExchangeRatesViewController: UIViewController, UIPickerViewDelegate, UIPic
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        updateCountryExchangeLabel()
+        if (euroTextField.text?.count)! > 0 {
+        update(rates: rate!)
+        }
         return countriesSymbols[row]
     }
     
-    // MARK : - Update rates with euro base
+    // MARK : - Update request and rates with euro base
+    
+    private func updateRequest() {
+        toggleActivityIndicator(shown: true)
+        ExchangeRatesManager.shared.getExchangeRates { (success, rate) in
+            self.toggleActivityIndicator(shown: false)
+            if success {
+               self.rate = rate
+            } else {
+                self.presentAlert()
+            }
+        }
+    }
     
     private func update(rates: Rates) {
         if (euroTextField.text?.count)! > 0 {
@@ -52,23 +69,24 @@ class ExchangeRatesViewController: UIViewController, UIPickerViewDelegate, UIPic
             if let rateValue = rates.ratesCountries[countrySymbol] {
                 let euro = Double(euroTextField.text!)
                 let resultExchange = euro! * rateValue
-                dollarExchangeLabel.text = String(resultExchange)
+                resultExchangeLabel.text = String(resultExchange)
             }
         } else if euroTextField.text?.count == 0 {
-            clearEuroTextFieldAndDollarExchangeLabel()
+            clearEuroTextFieldAndResultExchangeLabel()
         } else {
             presentAlert()
         }
     }
     
-    // MARK: - Clear method euro text field ans dollar label
+    // MARK: - Clear euro text field and result exchange label
     
-    private func clearEuroTextFieldAndDollarExchangeLabel() {
+    private func clearEuroTextFieldAndResultExchangeLabel() {
         euroTextField.text = ""
-        dollarExchangeLabel.text = ""
+        resultExchangeLabel.text = ""
+        updateRequest()
     }
     
-    private func updateExchangeLabel() {
+    private func updateCountryExchangeLabel() {
         let countriesNames = [String](symbols.values)
         let countryIndex = countriesRatesPickerView.selectedRow(inComponent: 0)
         let countryName = countriesNames[countryIndex]
@@ -87,21 +105,17 @@ class ExchangeRatesViewController: UIViewController, UIPickerViewDelegate, UIPic
     
     @IBAction func dismissKeyboard(_ sender: UITapGestureRecognizer) {
         euroTextField.resignFirstResponder()
-        clearEuroTextFieldAndDollarExchangeLabel()
-        updateExchangeLabel()
+        clearEuroTextFieldAndResultExchangeLabel()
+        updateCountryExchangeLabel()
     }
     
-    @IBAction func tapEuroTextField(_ sender: Any, forEvent event: UIEvent) {
-        toggleActivityIndicator(shown: true)
-        updateExchangeLabel()
-        ExchangeRatesManager.shared.getExchangeRates { (success, rate) in
-            self.toggleActivityIndicator(shown: false)
-            if success, let rate = rate {
-                self.update(rates: rate)
-            } else {
-                self.presentAlert()
-            }
-        }
+    @IBAction func tapEuroTextField(_ sender: UITextField, forEvent event: UIEvent) {
+        update(rates: rate!)
+        
+        
     }
+    
+    
+    
+    
 }
-

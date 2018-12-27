@@ -12,7 +12,7 @@ class ExchangeRatesManager {
     static var shared = ExchangeRatesManager()
     private init() {}
     
-    private static let exchangeRatesUrl = URL(string: "http://data.fixer.io/api/latest?")!
+    private static let exchangeRatesUrl = URL(string: "http://data.fixer.io/api/latest?access_key=43b3cea4bcddba105c31a55d02fe56f8&format=1")!
     
     private var task: URLSessionTask?
     
@@ -33,8 +33,8 @@ class ExchangeRatesManager {
         
         task?.cancel()
         task = exchangeRatesSession.dataTask(with: request) { (data, response, error) in
+            
             DispatchQueue.main.async {
-                
                 guard let data = data, error == nil else {
                     callback(false, nil)
                     return

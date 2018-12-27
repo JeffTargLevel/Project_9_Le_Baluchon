@@ -50,11 +50,11 @@
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="continue"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="maxLength">
-                                        <integer key="value" value="10"/>
+                                        <integer key="value" value="20"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="tapEuroTextField:forEvent:" destination="BYZ-38-t0r" eventType="editingChanged" id="Afl-Ao-j7C"/>
+                                    <action selector="tapEuroTextField:forEvent:" destination="BYZ-38-t0r" eventType="editingChanged" id="qOH-Dj-WrH"/>
                                 </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uzp-hv-VvP">
@@ -136,8 +136,8 @@
                         <outlet property="activityIndicator" destination="q32-CH-r0j" id="uBp-q0-DiQ"/>
                         <outlet property="countriesRatesPickerView" destination="j7Q-nd-KxT" id="LZn-sO-4ih"/>
                         <outlet property="countryExchangeLabel" destination="Uzp-hv-VvP" id="mzW-tq-L3n"/>
-                        <outlet property="dollarExchangeLabel" destination="fEt-IP-5lB" id="0c6-r6-Xke"/>
-                        <outlet property="euroTextField" destination="Hd4-Gy-nL9" id="bmy-Fv-CMP"/>
+                        <outlet property="euroTextField" destination="Hd4-Gy-nL9" id="hBQ-8H-PKg"/>
+                        <outlet property="resultExchangeLabel" destination="fEt-IP-5lB" id="0c6-r6-Xke"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
