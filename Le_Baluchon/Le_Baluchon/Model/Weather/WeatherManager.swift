@@ -54,7 +54,6 @@ class WeatherManager {
                     return
                 }
                 let conditions = ParisConditions(temperature: temperature, currentConditions: currentCondition)
-                print(conditions)
                 callback(true, conditions)
             }
         }
@@ -90,4 +89,3 @@ class WeatherManager {
         task?.resume()
     }
 }
-

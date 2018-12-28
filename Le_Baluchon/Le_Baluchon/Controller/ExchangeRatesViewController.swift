@@ -122,4 +122,3 @@ extension ExchangeRatesViewController {
         update(rates: rate!)
     }
 }
-

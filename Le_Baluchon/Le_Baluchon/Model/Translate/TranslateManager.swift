@@ -52,7 +52,6 @@ class TranslateManager {
                     return
                 }
                 let translation = Translate(english: english)
-                print(translation)
                 callback(true, translation)
             }
         }

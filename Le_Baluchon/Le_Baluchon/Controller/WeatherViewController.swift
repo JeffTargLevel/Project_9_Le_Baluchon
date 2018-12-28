@@ -16,10 +16,12 @@ class WeatherViewController: UIViewController {
     @IBOutlet weak var newYorkConditionsLabel: UILabel!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var cityImageView: UIImageView!
+    @IBOutlet var gestureRecognizer: UITapGestureRecognizer!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         toggleActivityIndicator(shown: false)
+        refreshAnyRequests()
     }
     
     // MARK: - Activity indicator and update city conditions
@@ -64,13 +66,23 @@ class WeatherViewController: UIViewController {
         }
     }
     
-    // MARK: - Perform New York request, animation images and alert controller
+    // MARK: - Perform New York request, animation images
     
-    private func performRequest() {
+    private func performNewYorkRequest() {
         Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.updateNewYorkRequest), userInfo: nil, repeats: false)
     }
     
-    func imagesAnimated() {
+    @objc private func activeGestureRecognizer() {
+        gestureRecognizer.isEnabled = true
+        
+    }
+    
+    private func performGestureRecognizer() {
+        gestureRecognizer.isEnabled = false
+        Timer.scheduledTimer(timeInterval: 10, target: self, selector: #selector(self.activeGestureRecognizer), userInfo: nil, repeats: false)
+    }
+    
+    private func imagesAnimated() {
         let parisImage = #imageLiteral(resourceName: "Paris")
         let newYorkImage = #imageLiteral(resourceName: "New_York")
         let imgListArray: [UIImage] = [parisImage, newYorkImage]
@@ -80,6 +92,15 @@ class WeatherViewController: UIViewController {
         cityImageView.startAnimating()
     }
     
+    // MARK: - Refresh any requests and alert controller
+    
+    private func refreshAnyRequests() {
+        performGestureRecognizer()
+        updateParisRequest()
+        performNewYorkRequest()
+        imagesAnimated()
+    }
+    
     private func presentAlert() {
         presentAlert(withTitle: "Error", message: "Update weather failed")
     }
@@ -87,9 +108,7 @@ class WeatherViewController: UIViewController {
     // MARK: - Tap for update
     
     @IBAction func tapForUpdate(_ sender: UITapGestureRecognizer) {
-        updateParisRequest()
-        performRequest()
-        imagesAnimated()
+        refreshAnyRequests()
     }
 }
 

@@ -421,6 +421,7 @@
                     <connections>
                         <outlet property="activityIndicator" destination="obb-b5-JPD" id="7Bd-q6-B3Q"/>
                         <outlet property="cityImageView" destination="6bi-Yr-jrM" id="Kcl-Xa-gfN"/>
+                        <outlet property="gestureRecognizer" destination="8OI-fi-uSu" id="9pg-Bs-RXs"/>
                         <outlet property="newYorkConditionsLabel" destination="8yA-vw-3Xr" id="qrV-fN-3VG"/>
                         <outlet property="newYorkTemperatureLabel" destination="ieE-Qj-U2z" id="Djb-kg-0aw"/>
                         <outlet property="parisConditionsLabel" destination="B44-gt-lUD" id="942-OE-nRe"/>
