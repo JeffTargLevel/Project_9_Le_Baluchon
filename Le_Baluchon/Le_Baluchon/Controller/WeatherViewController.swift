@@ -30,13 +30,13 @@ class WeatherViewController: UIViewController {
         activityIndicator.isHidden = !shown
     }
     
-    private func update(parisConditions: ParisConditions) {
-        parisTemperatureLabel.text = parisConditions.temperature
+    private func update(parisConditions: Conditions) {
+        parisTemperatureLabel.text = String(parisConditions.temperature)
         parisConditionsLabel.text = parisConditions.currentConditions
     }
     
-    private func update(newYorkConditions: NewYorkConditions) {
-        newYorkTemperatureLabel.text = newYorkConditions.temperature
+    private func update(newYorkConditions: Conditions) {
+        newYorkTemperatureLabel.text = String(newYorkConditions.temperature)
         newYorkConditionsLabel.text = newYorkConditions.currentConditions
     }
     

@@ -14,7 +14,7 @@
 		622CB5FC21CD446C00D83B65 /* CountriesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 622CB5FB21CD446C00D83B65 /* CountriesList.swift */; };
 		6237425921C6D02000777E99 /* GoogleTranslateApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6237425821C6D02000777E99 /* GoogleTranslateApiResponse.swift */; };
 		624EE6ED21C2C364000D0D5C /* WeatherManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 624EE6EC21C2C364000D0D5C /* WeatherManager.swift */; };
-		624EE6F121C2C401000D0D5C /* YahooWeatherApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 624EE6F021C2C401000D0D5C /* YahooWeatherApiResponse.swift */; };
+		624EE6F121C2C401000D0D5C /* OpenWeatherApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 624EE6F021C2C401000D0D5C /* OpenWeatherApiResponse.swift */; };
 		624EE6F321C2C614000D0D5C /* Conditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 624EE6F221C2C614000D0D5C /* Conditions.swift */; };
 		625A759021B8149E00E26356 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625A758F21B8149E00E26356 /* AppDelegate.swift */; };
 		625A759521B8149E00E26356 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 625A759321B8149E00E26356 /* Main.storyboard */; };
@@ -52,7 +52,7 @@
 		622CB5FB21CD446C00D83B65 /* CountriesList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesList.swift; sourceTree = "<group>"; };
 		6237425821C6D02000777E99 /* GoogleTranslateApiResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleTranslateApiResponse.swift; sourceTree = "<group>"; };
 		624EE6EC21C2C364000D0D5C /* WeatherManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherManager.swift; sourceTree = "<group>"; };
-		624EE6F021C2C401000D0D5C /* YahooWeatherApiResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YahooWeatherApiResponse.swift; sourceTree = "<group>"; };
+		624EE6F021C2C401000D0D5C /* OpenWeatherApiResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenWeatherApiResponse.swift; sourceTree = "<group>"; };
 		624EE6F221C2C614000D0D5C /* Conditions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Conditions.swift; sourceTree = "<group>"; };
 		625A758C21B8149E00E26356 /* Le_Baluchon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Le_Baluchon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		625A758F21B8149E00E26356 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -124,7 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				624EE6EC21C2C364000D0D5C /* WeatherManager.swift */,
-				624EE6F021C2C401000D0D5C /* YahooWeatherApiResponse.swift */,
+				624EE6F021C2C401000D0D5C /* OpenWeatherApiResponse.swift */,
 				624EE6F221C2C614000D0D5C /* Conditions.swift */,
 			);
 			path = Weather;
@@ -348,7 +348,7 @@
 				62BC592821C0150200E5AEB4 /* TranslateManager.swift in Sources */,
 				62EDB1F921D5475600E97278 /* ExtensionAlertController.swift in Sources */,
 				624EE6F321C2C614000D0D5C /* Conditions.swift in Sources */,
-				624EE6F121C2C401000D0D5C /* YahooWeatherApiResponse.swift in Sources */,
+				624EE6F121C2C401000D0D5C /* OpenWeatherApiResponse.swift in Sources */,
 				624EE6ED21C2C364000D0D5C /* WeatherManager.swift in Sources */,
 				62D1258D21BA725D0086D67F /* ExchangeRatesManager.swift in Sources */,
 				62888C4E21D4D1FF004B29C7 /* ExtensionUITextField.swift in Sources */,
