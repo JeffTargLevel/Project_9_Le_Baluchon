@@ -14,7 +14,7 @@ class WeatherManager {
     
     
     
-    private static let parisWeatherUrl = URL(string: "http://api.openweathermap.org/data/2.5/weather?q=Paris,fr&lang=fr&units=metric&APPID=786f439ea0b2cd50e080597216b28980")!
+    private static let parisWeatherUrl = URL(string: "http://api.openweathermap.org/data/2.5/weather?q=Paris,fr&lang=fr&units=metric&")!
     
     private static let newYorkWeatherUrl = URL(string: "http://api.openweathermap.org/data/2.5/weather?q=Manhattan,us&lang=fr&units=metric&")!
     
