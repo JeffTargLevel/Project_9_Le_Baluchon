@@ -69,6 +69,7 @@ extension ExchangeRatesViewController {
     
     private func update(rates: Rates) {
         if (euroTextField.text?.count)! > 0 {
+            changeKeyboard()
             let countryIndex = countriesRatesPickerView.selectedRow(inComponent: 0)
             let countrySymbol = countriesSymbols[countryIndex]
             
@@ -85,13 +86,30 @@ extension ExchangeRatesViewController {
     }
 }
 
-// MARK: - Clear euro text field and result exchange label
+// MARK: - Check if the first character is a number and change keyboard to the decimal point
 
 extension ExchangeRatesViewController {
+    
+    private func changeKeyboardType(_ keyboardtype: UIKeyboardType) {
+        euroTextField.resignFirstResponder()
+        euroTextField.keyboardType = keyboardtype
+        euroTextField.becomeFirstResponder()
+    }
+    
+    private func changeKeyboard() {
+        if (euroTextField.text?.contains("."))! || (euroTextField.text?.isEmpty)! {
+            changeKeyboardType(.numberPad)
+        } else {
+            changeKeyboardType(.decimalPad)
+        }
+    }
+    
+    // MARK: - Clear euro text field and result exchange label
     
     private func clearEuroTextFieldAndResultExchangeLabel() {
         euroTextField.text = ""
         resultExchangeLabel.text = ""
+        changeKeyboard()
         updateRequest()
     }
     
@@ -108,13 +126,14 @@ extension ExchangeRatesViewController {
         presentAlert(withTitle: "Error", message: "Exchange failed")
     }
 }
+
 // MARK: - Action dissmiss keyboard and tap euro text field
 
 extension ExchangeRatesViewController {
     
     @IBAction func dismissKeyboard(_ sender: UITapGestureRecognizer) {
-        euroTextField.resignFirstResponder()
         clearEuroTextFieldAndResultExchangeLabel()
+        euroTextField.resignFirstResponder()
         updateCountryExchangeLabel()
     }
     
@@ -122,3 +141,5 @@ extension ExchangeRatesViewController {
         update(rates: rate!)
     }
 }
+
+
