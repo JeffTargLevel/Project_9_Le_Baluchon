@@ -1,14 +1,14 @@
 //
-//  UrlSessionFake.swift
+//  URLTranslateSessionFake.swift
 //  Le_BaluchonTests
 //
-//  Created by Jean-François Santolaria on 14/01/2019.
+//  Created by Jean-François Santolaria on 15/01/2019.
 //  Copyright © 2019 OpenClassroomsFRSantolariaJF. All rights reserved.
 //
 
 import Foundation
 
-class URLRatesSessionFake: URLSession {
+class URLTranslateSessionFake: URLSession {
     var data: Data?
     var response: URLResponse?
     var error: Error?
@@ -20,7 +20,7 @@ class URLRatesSessionFake: URLSession {
     }
     
     override func dataTask(with request: URLRequest, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void) -> URLSessionDataTask {
-        let task = URLRatesSessionDataTaskFake()
+        let task = URLTranslateSessionDataTaskFake()
         task.completionHandler = completionHandler
         task.data = data
         task.urlResponse = response
@@ -29,7 +29,7 @@ class URLRatesSessionFake: URLSession {
     }
 }
 
-class URLRatesSessionDataTaskFake: URLSessionDataTask {
+class URLTranslateSessionDataTaskFake: URLSessionDataTask {
     var completionHandler: ((Data?, URLResponse?, Error?) -> Void)?
     
     var data: Data?
