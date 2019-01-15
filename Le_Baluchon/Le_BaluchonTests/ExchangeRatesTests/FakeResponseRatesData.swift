@@ -27,7 +27,6 @@ class FakeResponseRatesData {
         url: URL(string: "https://openclassrooms.com")!,
         statusCode: 500, httpVersion: nil, headerFields: [:])!
     
-    
     // MARK: - Error
     class RatesError: Error {}
     static let error = RatesError()

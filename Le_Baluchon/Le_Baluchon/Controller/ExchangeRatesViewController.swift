@@ -17,7 +17,7 @@ class ExchangeRatesViewController: UIViewController {
     @IBOutlet weak var countriesRatesPickerView: UIPickerView!
     
     private let countriesSymbols = [String](symbols.keys)
-    private var rate: Rates?
+    private var rates: Rates?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,7 +45,7 @@ extension ExchangeRatesViewController: UIPickerViewDelegate, UIPickerViewDataSou
     internal func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         updateCountryExchangeLabel()
         if (euroTextField.text?.count)! > 0 {
-            update(rates: rate!)
+            update(rates: rates!)
         }
         return countriesSymbols[row]
     }
@@ -57,10 +57,10 @@ extension ExchangeRatesViewController {
     
     private func updateRequest() {
         toggleActivityIndicator(shown: true)
-        ExchangeRatesManager.shared.getExchangeRates { (success, rate) in
+        ExchangeRatesManager.shared.getExchangeRates { (success, rates) in
             self.toggleActivityIndicator(shown: false)
             if success {
-                self.rate = rate
+                self.rates = rates
             } else {
                 self.presentAlert()
             }
@@ -138,8 +138,6 @@ extension ExchangeRatesViewController {
     }
     
     @IBAction func tapEuroTextField(_ sender: UITextField, forEvent event: UIEvent) {
-        update(rates: rate!)
+        update(rates: rates!)
     }
 }
-
-

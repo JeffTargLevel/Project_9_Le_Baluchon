@@ -111,4 +111,3 @@ class WeatherViewController: UIViewController {
         refreshAnyRequests()
     }
 }
-
