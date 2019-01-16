@@ -12,22 +12,16 @@ class WeatherManager {
     static var shared = WeatherManager()
     private init() {}
     
-    
-    
     private static let parisWeatherUrl = URL(string: "http://api.openweathermap.org/data/2.5/weather?q=Paris,fr&lang=fr&units=metric&")!
     
     private static let newYorkWeatherUrl = URL(string: "http://api.openweathermap.org/data/2.5/weather?q=Manhattan,us&lang=fr&units=metric&")!
     
     private var task: URLSessionTask?
     
-    private var parisWeatherSession = URLSession(configuration: .default)
-    private var newYorkWeatherSession = URLSession(configuration: .default)
+    private var weatherSession = URLSession(configuration: .default)
     
-   
-    init(parisWeatherSession: URLSession, newYorkWeatherSession: URLSession) {
-        self.parisWeatherSession = parisWeatherSession
-        self.newYorkWeatherSession = newYorkWeatherSession
-        
+    init(weatherSession: URLSession) {
+        self.weatherSession = weatherSession
     }
     
     private func createWeatherRequest(with url: URL) -> URLRequest {
@@ -41,7 +35,7 @@ class WeatherManager {
         let request = createWeatherRequest(with: WeatherManager.parisWeatherUrl)
         
         task?.cancel()
-        task = parisWeatherSession.dataTask(with: request) { (data, response, error) in
+        task = weatherSession.dataTask(with: request) { (data, response, error) in
             
             DispatchQueue.main.async {
                 
@@ -53,11 +47,11 @@ class WeatherManager {
                     callback(false, nil)
                     return
                 }
-                guard let responseJSON = try? JSONDecoder().decode(OpenWeatherApiResponse.self, from: data), let temperature = responseJSON.main.temp, let currentCondition = responseJSON.weather[0].description else {
+                guard let responseJSON = try? JSONDecoder().decode(OpenWeatherApiResponse.self, from: data), let temperature = responseJSON.main.temp, let currentConditions = responseJSON.weather[0].description else {
                     callback(false, nil)
                     return
                 }
-                let conditions = Conditions(temperature: temperature, currentConditions: currentCondition)
+                let conditions = Conditions(temperature: temperature, currentConditions: currentConditions)
                 print(conditions)
                 callback(true, conditions)
             }
@@ -71,7 +65,7 @@ class WeatherManager {
         let request = createWeatherRequest(with: WeatherManager.newYorkWeatherUrl)
         
         task?.cancel()
-        task = newYorkWeatherSession.dataTask(with: request) { (data, response, error) in
+        task = weatherSession.dataTask(with: request) { (data, response, error) in
             
             DispatchQueue.main.async {
                 
@@ -83,11 +77,11 @@ class WeatherManager {
                     callback(false, nil)
                     return
                 }
-                guard let responseJSON = try? JSONDecoder().decode(OpenWeatherApiResponse.self, from: data), let temperature = responseJSON.main.temp, let currentCondition = responseJSON.weather[0].description else {
+                guard let responseJSON = try? JSONDecoder().decode(OpenWeatherApiResponse.self, from: data), let temperature = responseJSON.main.temp, let currentConditions = responseJSON.weather[0].description else {
                     callback(false, nil)
                     return
                 }
-                let conditions = Conditions(temperature: temperature, currentConditions: currentCondition)
+                let conditions = Conditions(temperature: temperature, currentConditions: currentConditions)
                 print(conditions)
                 callback(true, conditions)
             }

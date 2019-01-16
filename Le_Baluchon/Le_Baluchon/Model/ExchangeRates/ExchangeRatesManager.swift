@@ -31,6 +31,7 @@ class ExchangeRatesManager {
     func getExchangeRates(callback: @escaping (Bool, Rates?) -> Void) {
         let request = createExchangeratesRequest()
         
+        task?.cancel()
         task = exchangeRatesSession.dataTask(with: request) { (data, response, error) in
             
             DispatchQueue.main.async {

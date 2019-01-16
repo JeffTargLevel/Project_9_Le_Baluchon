@@ -35,6 +35,7 @@ class TranslateManager {
     func getTranslate(callback: @escaping (Bool, Translate?) -> Void) {
         let request = createTranslateRequest()
         
+        task?.cancel()
         task = translateSession.dataTask(with: request) { (data, response, error) in
             DispatchQueue.main.async {
                 

@@ -39,4 +39,8 @@ class URLRatesSessionDataTaskFake: URLSessionDataTask {
     override func resume() {
         completionHandler?(data, urlResponse,responseError)
     }
+    
+    override func cancel() {
+        
+    }
 }
