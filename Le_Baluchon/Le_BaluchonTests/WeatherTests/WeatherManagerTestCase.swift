@@ -16,20 +16,22 @@ class WeatherManagerTestCase: XCTestCase {
         let weatherManager = WeatherManager(
             weatherSession: URLWeatherSessionFake(data: nil, response: nil, error: FakeResponseWeatherData.error))
         
-        let expectation = XCTestExpectation(description: "Wait for queue change.")
+        let expectation1 = XCTestExpectation(description: "Wait for queue change.")
         weatherManager.getParisWeather { (success, conditions) in
             
             XCTAssertFalse(success)
             XCTAssertNil(conditions)
+            expectation1.fulfill()
         }
         
+        let expectation2 = XCTestExpectation(description: "Wait for queue change.")
         weatherManager.getNewYorkWeather { (success, conditions) in
             
             XCTAssertFalse(success)
             XCTAssertNil(conditions)
-            expectation.fulfill()
+            expectation2.fulfill()
         }
-        wait(for: [expectation], timeout: 0.01)
+        wait(for: [expectation1, expectation2], timeout: 2)
     }
     
     func testGetWeatherShouldPostFailedCallbackIfNoData() {
@@ -37,20 +39,22 @@ class WeatherManagerTestCase: XCTestCase {
         let weatherManager = WeatherManager(
             weatherSession: URLWeatherSessionFake(data: nil, response: nil, error: nil))
         
-        let expectation = XCTestExpectation(description: "Wait for queue change.")
+        let expectation1 = XCTestExpectation(description: "Wait for queue change.")
         weatherManager.getParisWeather { (success, conditions) in
             
             XCTAssertFalse(success)
             XCTAssertNil(conditions)
+            expectation1.fulfill()
         }
         
+        let expectation2 = XCTestExpectation(description: "Wait for queue change.")
         weatherManager.getNewYorkWeather { (success, conditions) in
             
             XCTAssertFalse(success)
             XCTAssertNil(conditions)
-            expectation.fulfill()
+            expectation2.fulfill()
         }
-        wait(for: [expectation], timeout: 0.01)
+        wait(for: [expectation1, expectation2], timeout: 2)
     }
     
     func testGetWeatherShouldPostFailedCallbackIfIncorrectResponse() {
@@ -61,10 +65,12 @@ class WeatherManagerTestCase: XCTestCase {
                 response: FakeResponseWeatherData.responseKO,
                 error: nil))
         
+        let expectation1 = XCTestExpectation(description: "Wait for queue change.")
         parisWeatherManager.getParisWeather { (success, conditions) in
             
             XCTAssertFalse(success)
             XCTAssertNil(conditions)
+            expectation1.fulfill()
         }
         
         let newYorkWeatherManager = WeatherManager(
@@ -73,14 +79,14 @@ class WeatherManagerTestCase: XCTestCase {
                 response: FakeResponseWeatherData.responseKO,
                 error: nil))
         
-        let expectation = XCTestExpectation(description: "Wait for queue change.")
+        let expectation2 = XCTestExpectation(description: "Wait for queue change.")
         newYorkWeatherManager.getNewYorkWeather { (success, conditions) in
             
             XCTAssertFalse(success)
             XCTAssertNil(conditions)
-            expectation.fulfill()
+            expectation2.fulfill()
         }
-        wait(for: [expectation], timeout: 0.01)
+        wait(for: [expectation1, expectation2], timeout: 2)
     }
     
     func testGetWeatherShouldPostFailedCallbackIfIncorrectData() {
@@ -91,20 +97,22 @@ class WeatherManagerTestCase: XCTestCase {
                 response: FakeResponseWeatherData.responseOK,
                 error: nil))
         
-        let expectation = XCTestExpectation(description: "Wait for queue change.")
+        let expectation1 = XCTestExpectation(description: "Wait for queue change.")
         weatherManager.getParisWeather { (success, conditions) in
             
             XCTAssertFalse(success)
             XCTAssertNil(conditions)
+            expectation1.fulfill()
         }
         
+        let expectation2 = XCTestExpectation(description: "Wait for queue change.")
         weatherManager.getNewYorkWeather { (success, conditions) in
             
             XCTAssertFalse(success)
             XCTAssertNil(conditions)
-            expectation.fulfill()
+            expectation2.fulfill()
         }
-        wait(for: [expectation], timeout: 0.01)
+        wait(for: [expectation1, expectation2], timeout: 2)
     }
     
     func testGetWeatherShouldPostSuccessCallbackIfNoErrorAndCorrectData() {
@@ -115,6 +123,7 @@ class WeatherManagerTestCase: XCTestCase {
                 response: FakeResponseWeatherData.responseOK,
                 error: nil))
         
+        let expectation1 = XCTestExpectation(description: "Wait for queue change.")
         ParisWeatherManager.getParisWeather { (success, conditions) in
             
             XCTAssertTrue(success)
@@ -125,15 +134,16 @@ class WeatherManagerTestCase: XCTestCase {
             
             XCTAssertEqual(temperature, conditions?.temperature)
             XCTAssertEqual(currentConditons, conditions?.currentConditions)
+            expectation1.fulfill()
         }
         
-        let expectation = XCTestExpectation(description: "Wait for queue change.")
         let newYorkWeatherManager = WeatherManager(
             weatherSession: URLWeatherSessionFake(
                 data: FakeResponseWeatherData.newYorkWeatherCorrectData,
                 response: FakeResponseWeatherData.responseOK,
                 error: nil))
         
+        let expectation2 = XCTestExpectation(description: "Wait for queue change.")
         newYorkWeatherManager.getNewYorkWeather { (success, conditions) in
             
             XCTAssertTrue(success)
@@ -144,8 +154,8 @@ class WeatherManagerTestCase: XCTestCase {
             
             XCTAssertEqual(temperature, conditions?.temperature)
             XCTAssertEqual(currentConditons, conditions?.currentConditions)
-            expectation.fulfill()
+            expectation2.fulfill()
         }
-        wait(for: [expectation], timeout: 0.01)
+        wait(for: [expectation1, expectation2], timeout: 2)
     }
 }
