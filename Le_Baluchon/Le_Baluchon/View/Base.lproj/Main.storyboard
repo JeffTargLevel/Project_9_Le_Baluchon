@@ -130,7 +130,7 @@
                             <outletCollection property="gestureRecognizers" destination="w5M-Oz-XQH" appends="YES" id="y8F-dQ-9zc"/>
                         </connections>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Taux de change" id="fvR-A7-L54"/>
+                    <tabBarItem key="tabBarItem" title="Taux de change" image="Rates_Tab_Bar" id="fvR-A7-L54"/>
                     <navigationItem key="navigationItem" id="dQC-Y9-Kqq"/>
                     <connections>
                         <outlet property="activityIndicator" destination="q32-CH-r0j" id="uBp-q0-DiQ"/>
@@ -156,7 +156,6 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="YG0-Sg-Ed5">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="p6R-ga-HTS"/>
@@ -268,7 +267,7 @@
                             <outletCollection property="gestureRecognizers" destination="4bJ-jL-sx0" appends="YES" id="1AY-zb-6kl"/>
                         </connections>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Traducteur" id="f95-Kq-01S"/>
+                    <tabBarItem key="tabBarItem" title="Traducteur" image="Translate_Tab_Bar" id="f95-Kq-01S"/>
                     <navigationItem key="navigationItem" id="xg0-6r-fib"/>
                     <connections>
                         <outlet property="activityIndicator" destination="jDw-hU-acv" id="rVD-zr-hbd"/>
@@ -416,7 +415,7 @@
                             <outletCollection property="gestureRecognizers" destination="8OI-fi-uSu" appends="YES" id="yFi-Ix-Pxb"/>
                         </connections>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Météo" id="icw-ak-YSs"/>
+                    <tabBarItem key="tabBarItem" title="Météo" image="Weather_Tab_Bar" id="icw-ak-YSs"/>
                     <navigationItem key="navigationItem" id="mU4-XX-8sM"/>
                     <connections>
                         <outlet property="activityIndicator" destination="obb-b5-JPD" id="7Bd-q6-B3Q"/>
@@ -440,6 +439,9 @@
     </scenes>
     <resources>
         <image name="Paris" width="512" height="512"/>
+        <image name="Rates_Tab_Bar" width="20" height="20"/>
+        <image name="Translate_Tab_Bar" width="20" height="20"/>
+        <image name="Weather_Tab_Bar" width="20" height="20"/>
         <image name="european-union-flag-std" width="512" height="512"/>
         <image name="france-flag-std" width="512" height="512"/>
     </resources>
