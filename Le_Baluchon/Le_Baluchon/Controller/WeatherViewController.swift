@@ -31,12 +31,12 @@ class WeatherViewController: UIViewController {
     }
     
     private func update(parisConditions: Conditions) {
-        parisTemperatureLabel.text = String(parisConditions.temperature)
+        parisTemperatureLabel.text = String(parisConditions.temperature) + " " + "°C"
         parisConditionsLabel.text = parisConditions.currentConditions
     }
     
     private func update(newYorkConditions: Conditions) {
-        newYorkTemperatureLabel.text = String(newYorkConditions.temperature)
+        newYorkTemperatureLabel.text = String(newYorkConditions.temperature) + " " + "°C"
         newYorkConditionsLabel.text = newYorkConditions.currentConditions
     }
     
