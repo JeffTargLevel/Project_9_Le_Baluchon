@@ -57,7 +57,7 @@ extension ExchangeRatesViewController {
     
     private func updateRequest() {
         toggleActivityIndicator(shown: true)
-        ExchangeRatesManager.shared.getExchangeRates { (success, rates) in
+        ExchangeRatesManager.getExchangeRates { (success, rates) in
             self.toggleActivityIndicator(shown: false)
             if success {
                 self.rates = rates
@@ -74,7 +74,7 @@ extension ExchangeRatesViewController {
             let countrySymbol = countriesSymbols[countryIndex]
             
             if let rateValue = rates.ratesCountries[countrySymbol] {
-                let euro = Double(euroTextField.text!)
+                let euro = Double(euroTextField.text!) 
                 let resultExchange = euro! * rateValue
                 resultExchangeLabel.text = String(resultExchange)
             }

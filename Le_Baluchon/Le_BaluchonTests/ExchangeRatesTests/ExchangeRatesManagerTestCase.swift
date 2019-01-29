@@ -13,11 +13,10 @@ class ExchangeRatesManagerTestCase: XCTestCase {
     
     func testGetRatesShouldPostFailedCallbackIfError() {
         
-        let exchangeRatesManager = ExchangeRatesManager(
-            exchangeRatesSession: URLRatesSessionFake(data: nil, response: nil, error: FakeResponseRatesData.error))
+        ExchangeRatesManager.exchangeRatesSession = URLRatesSessionFake(data: nil, response: nil, error: FakeResponseRatesData.error)
         
         let expectation = XCTestExpectation(description: "Wait for queue change.")
-        exchangeRatesManager.getExchangeRates { (success, rates) in
+        ExchangeRatesManager.getExchangeRates { (success, rates) in
             
             XCTAssertFalse(success)
             XCTAssertNil(rates)
@@ -28,11 +27,10 @@ class ExchangeRatesManagerTestCase: XCTestCase {
     
     func testGetRatesShouldPostFailedCallbackIfNoData() {
         
-        let exchangeRatesManager = ExchangeRatesManager(
-            exchangeRatesSession: URLRatesSessionFake(data: nil, response: nil, error: nil))
+        ExchangeRatesManager.exchangeRatesSession = URLRatesSessionFake(data: nil, response: nil, error: nil)
         
         let expectation = XCTestExpectation(description: "Wait for queue change.")
-        exchangeRatesManager.getExchangeRates { (success, rates) in
+        ExchangeRatesManager.getExchangeRates { (success, rates) in
             
             XCTAssertFalse(success)
             XCTAssertNil(rates)
@@ -43,14 +41,10 @@ class ExchangeRatesManagerTestCase: XCTestCase {
     
     func testGetRatesShouldPostFailedCallbackIfIncorrectResponse() {
         
-        let exchangeRatesManager = ExchangeRatesManager(
-            exchangeRatesSession: URLRatesSessionFake(
-                data: FakeResponseRatesData.ratesCorrectData,
-                response: FakeResponseRatesData.responseKO,
-                error: nil))
+        ExchangeRatesManager.exchangeRatesSession = URLRatesSessionFake(data: FakeResponseRatesData.ratesCorrectData, response: FakeResponseRatesData.responseKO, error: nil)
         
         let expectation = XCTestExpectation(description: "Wait for queue change.")
-        exchangeRatesManager.getExchangeRates { (success, rates) in
+        ExchangeRatesManager.getExchangeRates { (success, rates) in
             
             XCTAssertFalse(success)
             XCTAssertNil(rates)
@@ -61,14 +55,10 @@ class ExchangeRatesManagerTestCase: XCTestCase {
     
     func testGetRatesShouldPostFailedCallbackIfIncorrectData() {
         
-        let exchangeRatesManager = ExchangeRatesManager(
-            exchangeRatesSession: URLRatesSessionFake(
-                data: FakeResponseRatesData.ratesIncorrectData,
-                response: FakeResponseRatesData.responseOK,
-                error: nil))
+        ExchangeRatesManager.exchangeRatesSession = URLRatesSessionFake(data: FakeResponseRatesData.ratesIncorrectData, response: FakeResponseRatesData.responseOK, error: nil)
         
         let expectation = XCTestExpectation(description: "Wait for queue change.")
-        exchangeRatesManager.getExchangeRates { (success, rates) in
+        ExchangeRatesManager.getExchangeRates { (success, rates) in
             
             XCTAssertFalse(success)
             XCTAssertNil(rates)
@@ -79,14 +69,10 @@ class ExchangeRatesManagerTestCase: XCTestCase {
     
     func testGetRatesShouldPostSuccessCallbackIfNoErrorAndCorrectData() {
         
-        let exchangeRatesManager = ExchangeRatesManager(
-            exchangeRatesSession: URLRatesSessionFake(
-                data: FakeResponseRatesData.ratesCorrectData,
-                response: FakeResponseRatesData.responseOK,
-                error: nil))
+        ExchangeRatesManager.exchangeRatesSession = URLRatesSessionFake(data: FakeResponseRatesData.ratesCorrectData, response: FakeResponseRatesData.responseOK, error: nil)
         
         let expectation = XCTestExpectation(description: "Wait for queue change.")
-        exchangeRatesManager.getExchangeRates { (success, rates) in
+        ExchangeRatesManager.getExchangeRates { (success, rates) in
             
             XCTAssertTrue(success)
             XCTAssertNotNil(rates)
@@ -99,3 +85,4 @@ class ExchangeRatesManagerTestCase: XCTestCase {
         wait(for: [expectation], timeout: 0.01)
     }
 }
+

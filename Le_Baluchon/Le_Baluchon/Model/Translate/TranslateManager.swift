@@ -9,22 +9,16 @@
 import Foundation
 
 class TranslateManager {
-    static var shared = TranslateManager()
-    private init() {}
     
     private static let translateUrl = URL(string: "https://translation.googleapis.com/language/translate/v2?target=en&format=text&source=fr&model=base&key=AIzaSyBsN1G7xicZttIlt0y8sTmJQ0suwmT1fSU")!
     
-    private var task: URLSessionTask?
+    private static var task: URLSessionTask?
     
-    private var translateSession = URLSession(configuration: .default)
+    static var translateSession = URLSession(configuration: .default)
     
-    var originalLanguage = OriginalLanguage()
+    static var originalLanguage = OriginalLanguage()
     
-    init(translateSession: URLSession) {
-        self.translateSession = translateSession
-    }
-    
-    private func createTranslateRequest() -> URLRequest {
+    private static func createTranslateRequest() -> URLRequest {
         var request = URLRequest(url: TranslateManager.translateUrl)
         request.httpMethod = "POST"
         let body = "q=\(originalLanguage.french)"
@@ -32,7 +26,7 @@ class TranslateManager {
         return request
     }
     
-    func getTranslate(callback: @escaping (Bool, Translate?) -> Void) {
+    static func getTranslate(callback: @escaping (Bool, Translate?) -> Void) {
         let request = createTranslateRequest()
         
         task?.cancel()
@@ -58,3 +52,4 @@ class TranslateManager {
         task?.resume()
     }
 }
+

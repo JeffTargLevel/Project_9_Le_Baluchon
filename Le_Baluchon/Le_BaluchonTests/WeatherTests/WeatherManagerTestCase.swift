@@ -13,11 +13,10 @@ class WeatherManagerTestCase: XCTestCase {
     
     func testGetWeatherShouldPostFailedCallbackIfError() {
         
-        let weatherManager = WeatherManager(
-            weatherSession: URLWeatherSessionFake(data: nil, response: nil, error: FakeResponseWeatherData.error))
+        WeatherManager.weatherSession = URLWeatherSessionFake(data: nil, response: nil, error: FakeResponseWeatherData.error)
         
         let expectation1 = XCTestExpectation(description: "Wait for queue change.")
-        weatherManager.getParisWeather { (success, conditions) in
+        WeatherManager.getCityWeather(with: WeatherManager.parisWeatherUrl) { (success, conditions) in
             
             XCTAssertFalse(success)
             XCTAssertNil(conditions)
@@ -25,7 +24,7 @@ class WeatherManagerTestCase: XCTestCase {
         }
         
         let expectation2 = XCTestExpectation(description: "Wait for queue change.")
-        weatherManager.getNewYorkWeather { (success, conditions) in
+        WeatherManager.getCityWeather(with: WeatherManager.newYorkWeatherUrl) { (success, conditions) in
             
             XCTAssertFalse(success)
             XCTAssertNil(conditions)
@@ -36,11 +35,10 @@ class WeatherManagerTestCase: XCTestCase {
     
     func testGetWeatherShouldPostFailedCallbackIfNoData() {
         
-        let weatherManager = WeatherManager(
-            weatherSession: URLWeatherSessionFake(data: nil, response: nil, error: nil))
+        WeatherManager.weatherSession = URLWeatherSessionFake(data: nil, response: nil, error: nil)
         
         let expectation1 = XCTestExpectation(description: "Wait for queue change.")
-        weatherManager.getParisWeather { (success, conditions) in
+        WeatherManager.getCityWeather(with: WeatherManager.parisWeatherUrl) { (success, conditions) in
             
             XCTAssertFalse(success)
             XCTAssertNil(conditions)
@@ -48,7 +46,7 @@ class WeatherManagerTestCase: XCTestCase {
         }
         
         let expectation2 = XCTestExpectation(description: "Wait for queue change.")
-        weatherManager.getNewYorkWeather { (success, conditions) in
+        WeatherManager.getCityWeather(with: WeatherManager.newYorkWeatherUrl) { (success, conditions) in
             
             XCTAssertFalse(success)
             XCTAssertNil(conditions)
@@ -59,28 +57,26 @@ class WeatherManagerTestCase: XCTestCase {
     
     func testGetWeatherShouldPostFailedCallbackIfIncorrectResponse() {
         
-        let parisWeatherManager = WeatherManager(
-            weatherSession: URLWeatherSessionFake(
-                data: FakeResponseWeatherData.parisWeatherCorrectData,
-                response: FakeResponseWeatherData.responseKO,
-                error: nil))
+        WeatherManager.weatherSession = URLWeatherSessionFake(
+            data: FakeResponseWeatherData.parisWeatherCorrectData,
+            response: FakeResponseWeatherData.responseKO,
+            error: nil)
         
         let expectation1 = XCTestExpectation(description: "Wait for queue change.")
-        parisWeatherManager.getParisWeather { (success, conditions) in
+        WeatherManager.getCityWeather(with: WeatherManager.parisWeatherUrl) { (success, conditions) in
             
             XCTAssertFalse(success)
             XCTAssertNil(conditions)
             expectation1.fulfill()
         }
         
-        let newYorkWeatherManager = WeatherManager(
-            weatherSession: URLWeatherSessionFake(
-                data: FakeResponseWeatherData.newYorkWeatherCorrectData,
-                response: FakeResponseWeatherData.responseKO,
-                error: nil))
+        WeatherManager.weatherSession = URLWeatherSessionFake(
+            data: FakeResponseWeatherData.newYorkWeatherCorrectData,
+            response: FakeResponseWeatherData.responseKO,
+            error: nil)
         
         let expectation2 = XCTestExpectation(description: "Wait for queue change.")
-        newYorkWeatherManager.getNewYorkWeather { (success, conditions) in
+        WeatherManager.getCityWeather(with: WeatherManager.newYorkWeatherUrl) { (success, conditions) in
             
             XCTAssertFalse(success)
             XCTAssertNil(conditions)
@@ -91,14 +87,13 @@ class WeatherManagerTestCase: XCTestCase {
     
     func testGetWeatherShouldPostFailedCallbackIfIncorrectData() {
         
-        let weatherManager = WeatherManager(
-            weatherSession: URLWeatherSessionFake(
-                data: FakeResponseWeatherData.weatherIncorrectData,
-                response: FakeResponseWeatherData.responseOK,
-                error: nil))
+        WeatherManager.weatherSession = URLWeatherSessionFake(
+            data: FakeResponseWeatherData.weatherIncorrectData,
+            response: FakeResponseWeatherData.responseOK,
+            error: nil)
         
         let expectation1 = XCTestExpectation(description: "Wait for queue change.")
-        weatherManager.getParisWeather { (success, conditions) in
+        WeatherManager.getCityWeather(with: WeatherManager.parisWeatherUrl) { (success, conditions) in
             
             XCTAssertFalse(success)
             XCTAssertNil(conditions)
@@ -106,7 +101,7 @@ class WeatherManagerTestCase: XCTestCase {
         }
         
         let expectation2 = XCTestExpectation(description: "Wait for queue change.")
-        weatherManager.getNewYorkWeather { (success, conditions) in
+        WeatherManager.getCityWeather(with: WeatherManager.newYorkWeatherUrl) { (success, conditions) in
             
             XCTAssertFalse(success)
             XCTAssertNil(conditions)
@@ -117,14 +112,13 @@ class WeatherManagerTestCase: XCTestCase {
     
     func testGetWeatherShouldPostSuccessCallbackIfNoErrorAndCorrectData() {
         
-        let ParisWeatherManager = WeatherManager(
-            weatherSession: URLWeatherSessionFake(
-                data: FakeResponseWeatherData.parisWeatherCorrectData,
-                response: FakeResponseWeatherData.responseOK,
-                error: nil))
+        WeatherManager.weatherSession = URLWeatherSessionFake(
+            data: FakeResponseWeatherData.parisWeatherCorrectData,
+            response: FakeResponseWeatherData.responseOK,
+            error: nil)
         
         let expectation1 = XCTestExpectation(description: "Wait for queue change.")
-        ParisWeatherManager.getParisWeather { (success, conditions) in
+        WeatherManager.getCityWeather(with: WeatherManager.parisWeatherUrl) { (success, conditions) in
             
             XCTAssertTrue(success)
             XCTAssertNotNil(conditions)
@@ -137,14 +131,13 @@ class WeatherManagerTestCase: XCTestCase {
             expectation1.fulfill()
         }
         
-        let newYorkWeatherManager = WeatherManager(
-            weatherSession: URLWeatherSessionFake(
-                data: FakeResponseWeatherData.newYorkWeatherCorrectData,
-                response: FakeResponseWeatherData.responseOK,
-                error: nil))
+        WeatherManager.weatherSession = URLWeatherSessionFake(
+            data: FakeResponseWeatherData.newYorkWeatherCorrectData,
+            response: FakeResponseWeatherData.responseOK,
+            error: nil)
         
         let expectation2 = XCTestExpectation(description: "Wait for queue change.")
-        newYorkWeatherManager.getNewYorkWeather { (success, conditions) in
+        WeatherManager.getCityWeather(with: WeatherManager.newYorkWeatherUrl) { (success, conditions) in
             
             XCTAssertTrue(success)
             XCTAssertNotNil(conditions)
@@ -159,3 +152,4 @@ class WeatherManagerTestCase: XCTestCase {
         wait(for: [expectation1, expectation2], timeout: 2)
     }
 }
+

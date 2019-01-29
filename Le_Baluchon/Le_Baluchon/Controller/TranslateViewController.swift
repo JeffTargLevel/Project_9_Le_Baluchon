@@ -29,7 +29,7 @@ class TranslateViewController: UIViewController, UITextViewDelegate {
     // MARK: - Update request
     
     private func updateRequest() {
-        TranslateManager.shared.getTranslate { (success, english) in
+        TranslateManager.getTranslate { (success, english) in
             self.toggleActivityIndicator(shown: false)
             if success, let english = english {
                 self.update(translate: english)
@@ -42,7 +42,7 @@ class TranslateViewController: UIViewController, UITextViewDelegate {
     // MARK: - Update french and translation english text view
     
     private func updateFrenchText() {
-        TranslateManager.shared.originalLanguage.french = sourceFrenchTextView.text
+        TranslateManager.originalLanguage.french = sourceFrenchTextView.text
         countryImageView.image = #imageLiteral(resourceName: "usa-flag-std_1")
     }
     

@@ -30,24 +30,19 @@ class WeatherViewController: UIViewController {
         activityIndicator.isHidden = !shown
     }
     
-    private func update(parisConditions: Conditions) {
-        parisTemperatureLabel.text = String(parisConditions.temperature) + " " + "°C"
-        parisConditionsLabel.text = parisConditions.currentConditions
-    }
-    
-    private func update(newYorkConditions: Conditions) {
-        newYorkTemperatureLabel.text = String(newYorkConditions.temperature) + " " + "°C"
-        newYorkConditionsLabel.text = newYorkConditions.currentConditions
+    private func update(cityConditions: Conditions, cityTemperatureLabel: UILabel, cityConditionsLabel: UILabel) {
+        cityTemperatureLabel.text = String(cityConditions.temperature) + " " + "°C"
+        cityConditionsLabel.text = cityConditions.currentConditions
     }
     
     // MARK: - Update city request and update city image
     
     private func updateParisRequest() {
         toggleActivityIndicator(shown: true)
-        WeatherManager.shared.getParisWeather { (success, conditions) in
+        WeatherManager.getCityWeather(with: WeatherManager.parisWeatherUrl) { (success, conditions) in
             self.toggleActivityIndicator(shown: false)
             if success, let conditions = conditions {
-                self.update(parisConditions: conditions)
+                self.update(cityConditions: conditions, cityTemperatureLabel: self.parisTemperatureLabel, cityConditionsLabel: self.parisConditionsLabel)
             } else {
                 self.presentAlert()
             }
@@ -56,10 +51,10 @@ class WeatherViewController: UIViewController {
     
     @objc private func updateNewYorkRequest() {
         toggleActivityIndicator(shown: true)
-        WeatherManager.shared.getNewYorkWeather { (success, conditions) in
+        WeatherManager.getCityWeather(with: WeatherManager.newYorkWeatherUrl) { (success, conditions) in
             self.toggleActivityIndicator(shown: false)
             if success, let conditions = conditions {
-                self.update(newYorkConditions: conditions)
+                self.update(cityConditions: conditions, cityTemperatureLabel: self.newYorkTemperatureLabel, cityConditionsLabel: self.newYorkConditionsLabel)
             } else {
                 self.presentAlert()
             }
