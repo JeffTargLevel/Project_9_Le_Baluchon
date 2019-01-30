@@ -10,4 +10,5 @@ import Foundation
 
 struct FixerApiResponse: Codable {
     let rates: [String: Double]?
+    let symbols: [String: String]?
 }

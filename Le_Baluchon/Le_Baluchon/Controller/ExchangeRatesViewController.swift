@@ -16,12 +16,18 @@ class ExchangeRatesViewController: UIViewController {
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var countriesRatesPickerView: UIPickerView!
     
-    private let countriesSymbols = [String](symbols.keys)
+    private var symbols = Symbols() {
+        didSet {
+            countriesRatesPickerView.reloadAllComponents()
+        }
+    }
+    
     private var rates: Rates?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         toggleActivityIndicator(shown: false)
+        updateSymbols()
         updateRequest()
     }
     
@@ -39,11 +45,12 @@ extension ExchangeRatesViewController: UIPickerViewDelegate, UIPickerViewDataSou
     }
     
     internal func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return symbols.count
+        return symbols.countries.count
     }
     
     internal func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         updateCountryExchangeLabel()
+        let countriesSymbols = [String](symbols.countries.keys)
         if (euroTextField.text?.count)! > 0 {
             update(rates: rates!)
         }
@@ -54,6 +61,18 @@ extension ExchangeRatesViewController: UIPickerViewDelegate, UIPickerViewDataSou
 // MARK: - Update request and rates with euro base
 
 extension ExchangeRatesViewController {
+    
+    private func updateSymbols() {
+        toggleActivityIndicator(shown: true)
+        SymbolsCountriesManager.getSymbolsCountries { (success, symbols) in
+            self.toggleActivityIndicator(shown: false)
+            if success, let countriesSymbols = symbols {
+                self.symbols = countriesSymbols
+            } else {
+                self.presentAlert()
+            }
+        }
+    }
     
     private func updateRequest() {
         toggleActivityIndicator(shown: true)
@@ -71,10 +90,11 @@ extension ExchangeRatesViewController {
         if (euroTextField.text?.count)! > 0 {
             changeKeyboard()
             let countryIndex = countriesRatesPickerView.selectedRow(inComponent: 0)
+            let countriesSymbols = [String](symbols.countries.keys)
             let countrySymbol = countriesSymbols[countryIndex]
             
             if let rateValue = rates.ratesCountries[countrySymbol] {
-                let euro = Double(euroTextField.text!) 
+                let euro = Double(euroTextField.text!)
                 let resultExchange = euro! * rateValue
                 resultExchangeLabel.text = String(resultExchange)
             }
@@ -114,7 +134,7 @@ extension ExchangeRatesViewController {
     }
     
     private func updateCountryExchangeLabel() {
-        let countriesNames = [String](symbols.values)
+        let countriesNames = [String](symbols.countries.values)
         let countryIndex = countriesRatesPickerView.selectedRow(inComponent: 0)
         let countryName = countriesNames[countryIndex]
         countryExchangeLabel.text = countryName
