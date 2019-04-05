@@ -10,7 +10,9 @@ import Foundation
 
 class ExchangeRatesManager {
     
-    private static let exchangeRatesUrl = URL(string: "http://data.fixer.io/api/latest?access_key=43b3cea4bcddba105c31a55d02fe56f8&format=1")!
+    private static let exchangeRatesApiKey = ExchangeRatesApiKey()
+    
+    private static let exchangeRatesUrl = URL(string: "http://data.fixer.io/api/latest?\(exchangeRatesApiKey.key)&format=1")!
     
     private static var task: URLSessionTask?
     

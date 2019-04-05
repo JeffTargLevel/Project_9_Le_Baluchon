@@ -10,7 +10,9 @@ import Foundation
 
 class TranslateManager {
     
-    private static let translateUrl = URL(string: "https://translation.googleapis.com/language/translate/v2?target=en&format=text&source=fr&model=base&key=AIzaSyBsN1G7xicZttIlt0y8sTmJQ0suwmT1fSU")!
+    private static let translateApiKey = TranslateApiKey()
+    
+    private static let translateUrl = URL(string: "https://translation.googleapis.com/language/translate/v2?target=en&format=text&source=fr&model=base&\(translateApiKey.key)")!
     
     private static var task: URLSessionTask?
     
